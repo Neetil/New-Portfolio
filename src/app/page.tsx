@@ -13,7 +13,7 @@ const projects = [
   {
     title: "Campus Vibe",
     description: "An anonymous platform for students to meet and connect with others on campus through real-time text and video chat.",
-    imageUrl: "/images/projects/campus-vibe-screenshot.svg",
+    imageUrl: "/images/projects/campus-vibe-screenshot.jpg",
     tags: ["Next.js", "React", "Tailwind CSS", "Real-time Chat"],
     liveUrl: "https://campus-vibe-git-main-neetils-projects.vercel.app/",
     repoUrl: "#",
