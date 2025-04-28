@@ -1,0 +1,29 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#000000" />
+
+  <!-- Logo and Title -->
+  <g transform="translate(400, 218)">
+    <circle cx="-70" cy="0" r="30" fill="#4F6CE9" />
+    <circle cx="-70" cy="0" r="12" fill="none" stroke="white" stroke-width="3" />
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white" text-anchor="middle">Campus Vibe</text>
+  </g>
+
+  <!-- Description Text -->
+  <g transform="translate(400, 300)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">Meet new people on your campus. Anonymous,</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">real-time text & video chat—just like Omegle,</text>
+    <text x="0" y="60" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">but made for students.</text>
+  </g>
+
+  <!-- Button -->
+  <g transform="translate(400, 415)">
+    <rect x="-100" y="-25" width="200" height="50" rx="15" fill="#4F6CE9" />
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">Start Chatting</text>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(400, 500)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" fill="#666666" text-anchor="middle">Completely anonymous, no sign-ups, no tracking.</text>
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="12" fill="#666666" text-anchor="middle">Built with Neetil.</text>
+  </g>
+</svg>

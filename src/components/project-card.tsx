@@ -8,7 +8,8 @@ import { ExternalLink, Github } from 'lucide-react';
 interface Project {
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string | null;
+  customComponent?: React.ComponentType;
   tags: string[];
   liveUrl?: string;
   repoUrl?: string;
@@ -23,7 +24,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <Card className="flex flex-col overflow-hidden h-full transition-shadow duration-300 hover:shadow-lg">
       <CardHeader className="p-0">
         <div className="relative aspect-video w-full overflow-hidden">
-          {project.imageUrl.includes('.svg') ? (
+          {project.customComponent ? (
+            <project.customComponent />
+          ) : project.imageUrl && project.imageUrl.includes('.svg') ? (
             <div className="w-full h-full bg-zinc-900 flex items-center justify-center p-8">
               <Image
                 src={project.imageUrl}
@@ -34,14 +37,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-          ) : (
+          ) : project.imageUrl ? (
             <Image
-              src={project.imageUrl || "https://picsum.photos/400/225"} // Placeholder if no image
+              src={project.imageUrl}
               alt={project.title}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
+          ) : (
+            <div className="w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+              <span className="text-gray-400">No preview available</span>
+            </div>
           )}
         </div>
       </CardHeader>
