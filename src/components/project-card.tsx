@@ -23,13 +23,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <Card className="flex flex-col overflow-hidden h-full transition-shadow duration-300 hover:shadow-lg">
       <CardHeader className="p-0">
         <div className="relative aspect-video w-full overflow-hidden">
-          <Image
-            src={project.imageUrl || "https://picsum.photos/400/225"} // Placeholder if no image
-            alt={project.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          {project.imageUrl.includes('.svg') ? (
+            <div className="w-full h-full bg-zinc-900 flex items-center justify-center p-8">
+              <Image
+                src={project.imageUrl}
+                alt={project.title}
+                width={200}
+                height={100}
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+          ) : (
+            <Image
+              src={project.imageUrl || "https://picsum.photos/400/225"} // Placeholder if no image
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          )}
         </div>
       </CardHeader>
       <CardContent className="p-4 flex-grow">

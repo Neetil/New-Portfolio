@@ -13,7 +13,7 @@ const projects = [
   {
     title: "Campus Vibe",
     description: "An anonymous platform for students to meet and connect with others on campus through real-time text and video chat.",
-    imageUrl: "https://ext.same-assets.com/1623299853/3783633550.svg",
+    imageUrl: "/images/projects/campus-vibe.svg",
     tags: ["Next.js", "React", "Tailwind CSS", "Real-time Chat"],
     liveUrl: "https://campus-vibe-git-main-neetils-projects.vercel.app/",
     repoUrl: "#",
@@ -21,7 +21,7 @@ const projects = [
   {
     title: "FoodLink",
     description: "A platform connecting surplus food to those in need, helping bridge hunger and hope one connection at a time.",
-    imageUrl: "https://ext.same-assets.com/3495615068/2108804580.jpeg",
+    imageUrl: "/images/projects/foodlink.jpg",
     tags: ["React", "Tailwind", "Food Donation", "Social Impact"],
     repoUrl: "#",
     liveUrl: "https://foodlink-git-main-neetils-projects.vercel.app/",
@@ -29,7 +29,7 @@ const projects = [
   {
     title: "Clubify",
     description: "One platform for all clubs - a comprehensive club management system for university technical clubs and organizations.",
-    imageUrl: "https://ext.same-assets.com/1596782331/2649939867.jpeg",
+    imageUrl: "/images/projects/clubify.jpg",
     tags: ["Web Platform", "Club Management", "Event Planning", "Collaboration"],
     liveUrl: "https://clubify-git-main-neetils-projects.vercel.app/",
     repoUrl: "#",
@@ -37,7 +37,7 @@ const projects = [
    {
     title: "NextStep",
     description: "Empowering your career path with personalized learning roadmaps, mentorship, and AI-driven skill development.",
-    imageUrl: "https://ext.same-assets.com/3439062228/3295025748.jpeg",
+    imageUrl: "/images/projects/nextstep.jpg",
     tags: ["Career Development", "Education", "AI Learning Paths"],
     liveUrl: "https://next-step-git-main-neetils-projects.vercel.app/",
     repoUrl: "#",
