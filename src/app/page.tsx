@@ -99,7 +99,7 @@ export default function Home() {
            <div className="space-y-4 animate-slide-in-left">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About Me</h2>
                 <p className="text-muted-foreground md:text-xl/relaxed">
-                    I'm Neetil, a passionate creator who loves turning ideas into meaningful experiences. My journey into the world of technology began with simple curiosity and has grown into a deep commitment to building solutions that matter. I believe in the power of creativity, persistence, and thoughtful problem-solving to drive real impact.
+                    I'm Neetil, a passionate developer with a strong focus on building clean, efficient, and user-centric digital experiences. My journey into tech began during the first semester of my college when I started experimenting with simple HTML pages, which soon turned into a deep passion for web development. Since then, I've worked on mastering both frontend and backend technologies, developing robust, scalable applications.
                 </p>
                 <p className="text-muted-foreground md:text-xl/relaxed">
                     Beyond coding, I find energy in challenges — whether it's collaborating with dynamic teams, participating in intense hackathons, or pushing boundaries through new projects. Every experience fuels my growth, sharpens my perspective, and strengthens my passion for making a difference through what I build.
