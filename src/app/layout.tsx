@@ -25,12 +25,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/favicon.png',
-        href: '/favicon.png',
+        url: '/images/favicon/n-favicon.png',
+        href: '/images/favicon/n-favicon.png',
       },
     ],
     apple: {
-      url: '/favicon.png',
+      url: '/images/favicon/n-favicon.png',
       sizes: '180x180',
       type: 'image/png',
     },
@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     // Removed extra whitespace causing hydration error
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-        <link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="icon" href="/images/favicon/n-favicon.png" sizes="any" />
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
