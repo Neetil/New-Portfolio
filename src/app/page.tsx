@@ -16,14 +16,14 @@ const projects = [
     imageUrl: "/images/projects/campus-vibe-screenshot.jpg",
     tags: ["Next.js", "React", "Tailwind CSS", "Real-time Chat"],
     liveUrl: "https://campus-vibe-git-main-neetils-projects.vercel.app/",
-    repoUrl: "#",
+    repoUrl: "https://github.com/Neetil/campus-vibe",
   },
   {
     title: "FoodLink",
     description: "A platform connecting surplus food to those in need, helping bridge hunger and hope one connection at a time.",
     imageUrl: "/images/projects/foodlink.jpg",
     tags: ["React", "Tailwind", "Food Donation", "Social Impact"],
-    repoUrl: "#",
+    repoUrl: "https://github.com/Neetil/Foodlink",
     liveUrl: "https://foodlink-git-main-neetils-projects.vercel.app/",
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     imageUrl: "/images/projects/clubify.jpg",
     tags: ["Web Platform", "Club Management", "Event Planning", "Collaboration"],
     liveUrl: "https://clubify-git-main-neetils-projects.vercel.app/",
-    repoUrl: "#",
+    repoUrl: "https://github.com/Neetil/Clubify",
   },
    {
     title: "NextStep",
@@ -40,7 +40,7 @@ const projects = [
     imageUrl: "/images/projects/nextstep.jpg",
     tags: ["Career Development", "Education", "AI Learning Paths"],
     liveUrl: "https://next-step-git-main-neetils-projects.vercel.app/",
-    repoUrl: "#",
+    repoUrl: "https://github.com/Neetil/NextStep",
   },
 ];
 
@@ -128,10 +128,6 @@ export default function Home() {
         </div>
       </section>
 
-
-
-
-
       {/* Projects Section */}
       <section id="projects" className="container py-10">
         <div className="space-y-4 mb-8 text-center">
@@ -148,8 +144,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-
 
       {/* Testimonials Section (NEW) */}
       <section id="testimonials" className="container py-10">
