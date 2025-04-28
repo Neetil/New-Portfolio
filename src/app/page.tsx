@@ -99,10 +99,10 @@ export default function Home() {
            <div className="space-y-4 animate-slide-in-left">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About Me</h2>
                 <p className="text-muted-foreground md:text-xl/relaxed">
-                    I'm Neetil, a dedicated developer with a knack for problem-solving and a love for clean code. My journey in tech started with [mention your origin story briefly - e.g., a simple HTML page, a coding bootcamp, university]. Since then, I've honed my skills in building robust backends and intuitive frontends.
+                    I'm Neetil, a passionate creator who loves turning ideas into meaningful experiences. My journey into the world of technology began with simple curiosity and has grown into a deep commitment to building solutions that matter. I believe in the power of creativity, persistence, and thoughtful problem-solving to drive real impact.
                 </p>
                 <p className="text-muted-foreground md:text-xl/relaxed">
-                    Beyond coding, I enjoy [mention a hobby or interest, e.g., contributing to open-source, hiking, photography] which helps me bring a fresh perspective to my work. I thrive in collaborative environments and I'm always eager to learn new technologies.
+                    Beyond coding, I find energy in challenges — whether it's collaborating with dynamic teams, participating in intense hackathons, or pushing boundaries through new projects. Every experience fuels my growth, sharpens my perspective, and strengthens my passion for making a difference through what I build.
                 </p>
                 <Button variant="outline" asChild>
                   <Link href="#contact">
