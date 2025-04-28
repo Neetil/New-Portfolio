@@ -15,6 +15,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ext.same-assets.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

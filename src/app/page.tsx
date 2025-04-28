@@ -8,38 +8,38 @@ import { Testimonials } from '@/components/testimonials'; // Import testimonials
 import { ContactForm } from '@/components/contact-form'; // Import contact form
 import { Code, Download, Layers, Mail } from 'lucide-react';
 
-// Dummy project data - replace with your actual projects
+// Project showcase with live demos
 const projects = [
   {
-    title: "Project Alpha",
-    description: "A web application built with Next.js and Tailwind CSS demonstrating server components.",
-    imageUrl: "https://picsum.photos/seed/alpha/400/225",
-    tags: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
-    liveUrl: "#",
+    title: "Campus Vibe",
+    description: "An anonymous platform for students to meet and connect with others on campus through real-time text and video chat.",
+    imageUrl: "https://ext.same-assets.com/1623299853/3783633550.svg",
+    tags: ["Next.js", "React", "Tailwind CSS", "Real-time Chat"],
+    liveUrl: "https://campus-vibe-git-main-neetils-projects.vercel.app/",
     repoUrl: "#",
   },
   {
-    title: "Project Beta",
-    description: "An API service developed using Node.js and Express, integrated with a PostgreSQL database.",
-    imageUrl: "https://picsum.photos/seed/beta/400/225",
-    tags: ["Node.js", "Express", "API", "PostgreSQL"],
+    title: "FoodLink",
+    description: "A platform connecting surplus food to those in need, helping bridge hunger and hope one connection at a time.",
+    imageUrl: "https://ext.same-assets.com/3495615068/2108804580.jpeg",
+    tags: ["React", "Tailwind", "Food Donation", "Social Impact"],
     repoUrl: "#",
-    liveUrl: "#",
+    liveUrl: "https://foodlink-git-main-neetils-projects.vercel.app/",
   },
   {
-    title: "Project Gamma",
-    description: "A design system implemented with Storybook and styled-components for reusable UI elements.",
-    imageUrl: "https://picsum.photos/seed/gamma/400/225",
-    tags: ["UI/UX", "Design System", "Storybook", "CSS-in-JS"],
-    liveUrl: "#",
+    title: "Clubify",
+    description: "One platform for all clubs - a comprehensive club management system for university technical clubs and organizations.",
+    imageUrl: "https://ext.same-assets.com/1596782331/2649939867.jpeg",
+    tags: ["Web Platform", "Club Management", "Event Planning", "Collaboration"],
+    liveUrl: "https://clubify-git-main-neetils-projects.vercel.app/",
     repoUrl: "#",
   },
    {
-    title: "Project Delta",
-    description: "A mobile-first application using React Native targeting both iOS and Android platforms.",
-    imageUrl: "https://picsum.photos/seed/delta/400/225",
-    tags: ["React Native", "Mobile", "JavaScript"],
-    liveUrl: "#",
+    title: "NextStep",
+    description: "Empowering your career path with personalized learning roadmaps, mentorship, and AI-driven skill development.",
+    imageUrl: "https://ext.same-assets.com/3439062228/3295025748.jpeg",
+    tags: ["Career Development", "Education", "AI Learning Paths"],
+    liveUrl: "https://next-step-git-main-neetils-projects.vercel.app/",
     repoUrl: "#",
   },
 ];
