@@ -1,6 +1,7 @@
 'use client'; // Required for Sheet state management
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
@@ -28,6 +29,15 @@ export function Header() {
       {/* Apply consistent horizontal padding */}
       <div className="container flex h-14 items-center px-8 sm:px-12 md:px-16 lg:px-20 xl:px-48">
         <Link href="#home" className="mr-6 flex items-center space-x-2">
+          <div className="relative w-8 h-8 mr-2">
+            <Image
+              src="/images/logo/neetil-logo.png"
+              alt="Neetil Logo"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
+          </div>
           <span className="font-bold sm:inline-block">Portfolio Pilot</span>
         </Link>
         <nav className="hidden gap-6 md:flex flex-1">

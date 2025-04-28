@@ -20,8 +20,33 @@ const geistSans = Geist({
 // });
 
 export const metadata: Metadata = {
-  title: 'Portfolio Pilot | Neetil', // Updated name
-  description: 'A personal portfolio showcasing projects and skills.',
+  title: 'Portfolio Pilot | Neetil',
+  description: 'A personal portfolio showcasing projects and skills by Neetil, a Full-Stack Developer.',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.png',
+        href: '/favicon.png',
+      },
+    ],
+    apple: {
+      url: '/favicon.png',
+      sizes: '180x180',
+      type: 'image/png',
+    },
+  },
+  openGraph: {
+    title: 'Portfolio Pilot | Neetil',
+    description: 'A personal portfolio showcasing projects and skills by Neetil, a Full-Stack Developer.',
+    images: ['/images/logo/neetil-logo.png'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portfolio Pilot | Neetil',
+    description: 'A personal portfolio showcasing projects and skills by Neetil, a Full-Stack Developer.',
+    images: ['/images/logo/neetil-logo.png'],
+  },
 };
 
 export default function RootLayout({
@@ -32,6 +57,7 @@ export default function RootLayout({
   return (
     // Removed extra whitespace causing hydration error
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+        <link rel="icon" href="/favicon.png" sizes="any" />
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
