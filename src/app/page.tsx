@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectCard } from '@/components/project-card';
 import { AiAssistant } from '@/components/ai-assistant';
-import { Code, Coffee, Download, Layers, Mail, Send } from 'lucide-react';
+import { Testimonials } from '@/components/testimonials'; // Import testimonials component
+import { ContactForm } from '@/components/contact-form'; // Import contact form
+import { Code, Download, Layers, Mail } from 'lucide-react';
 
 // Dummy project data - replace with your actual projects
 const projects = [
@@ -22,6 +24,7 @@ const projects = [
     imageUrl: "https://picsum.photos/seed/beta/400/225",
     tags: ["Node.js", "Express", "API", "PostgreSQL"],
     repoUrl: "#",
+    liveUrl: "#",
   },
   {
     title: "Project Gamma",
@@ -29,6 +32,7 @@ const projects = [
     imageUrl: "https://picsum.photos/seed/gamma/400/225",
     tags: ["UI/UX", "Design System", "Storybook", "CSS-in-JS"],
     liveUrl: "#",
+    repoUrl: "#",
   },
    {
     title: "Project Delta",
@@ -83,7 +87,7 @@ export default function Home() {
         </div>
          <div className="relative aspect-square w-full max-w-[300px] mx-auto lg:mx-0 lg:justify-self-end animate-fade-in">
             <Image
-                src="https://picsum.photos/seed/profile/300/300"
+                src="/images/neetil-profile.jpg"
                 alt="Neetil"
                 fill
                 className="rounded-full object-cover shadow-lg border-4 border-secondary"
@@ -124,8 +128,12 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
+
       {/* Projects Section */}
-      <section id="projects" className="container">
+      <section id="projects" className="container py-10">
         <div className="space-y-4 mb-8 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects Showcase</h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
@@ -141,11 +149,62 @@ export default function Home() {
         </div>
       </section>
 
+
+
+      {/* Testimonials Section (NEW) */}
+      <section id="testimonials" className="container py-10">
+        <div className="space-y-4 mb-8 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Client Testimonials</h2>
+          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+            What people are saying about working with me.
+          </p>
+        </div>
+        <div className="mt-10 max-w-4xl mx-auto">
+          <Testimonials />
+        </div>
+      </section>
+
+      {/* Contact Section (NEW) */}
+      <section id="contact" className="container py-10">
+        <div className="grid gap-10 lg:grid-cols-2 items-start">
+          <div>
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get In Touch</h2>
+              <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
+                Have a project in mind or want to discuss potential opportunities? Send me a message and I'll get back to you as soon as possible.
+              </p>
+            </div>
+            <div className="mt-8 space-y-4">
+              <Card>
+                <CardContent className="p-6 flex items-center gap-4">
+                  <Mail className="h-6 w-6 text-primary" />
+                  <div>
+                    <h3 className="font-medium">Email</h3>
+                    <a href="mailto:neetilwork@gmail.com" className="text-sm text-muted-foreground hover:underline">
+                      neetilwork@gmail.com
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+              {/* Can add more contact methods here like phone, location, etc. */}
+            </div>
+          </div>
+          <div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Send me a message</CardTitle>
+                <CardDescription>Fill out the form below to get in touch with me.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ContactForm />
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* AI Assistant Section */}
       <AiAssistant />
-
-      {/* Contact Section Placeholder (integrated into Footer) */}
-      {/* You can add a dedicated contact form here if needed */}
 
     </>
   );

@@ -16,8 +16,9 @@ export function Header() {
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
-    { label: 'AI Assistant', href: '#ai-assistant' },
+    { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
+    { label: 'AI Assistant', href: '#ai-assistant' },
   ];
 
   const closeSheet = () => setIsSheetOpen(false);

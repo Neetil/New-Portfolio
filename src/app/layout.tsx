@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
+import { BackToTop } from "@/components/back-to-top"; // Import BackToTop
 import { ThemeProvider } from '@/providers/theme-provider'; // Import ThemeProvider
 
 const geistSans = Geist({
@@ -46,6 +47,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <Toaster />
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>
