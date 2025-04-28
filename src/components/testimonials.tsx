@@ -22,8 +22,8 @@ const defaultTestimonials: Testimonial[] = [
     id: "1",
     text: "Neetil is an exceptional developer who delivered our project on time and exceeded our expectations. The attention to detail and clean code made a huge difference.",
     author: {
-      name: "Alex Johnson",
-      title: "Product Manager",
+      name: "Jasneet Singh Saini",
+      title: "Student Placement Coordinator and Influencer",
       avatarUrl: "https://picsum.photos/seed/person1/100/100",
     },
   },
@@ -31,8 +31,8 @@ const defaultTestimonials: Testimonial[] = [
     id: "2",
     text: "Working with Neetil was a great experience. They understood our requirements perfectly and implemented everything with impressive speed and quality.",
     author: {
-      name: "Maria Chen",
-      title: "Startup Founder",
+      name: "Nirjara Jain",
+      title: "Student",
       avatarUrl: "https://picsum.photos/seed/person2/100/100",
     },
   },
@@ -40,8 +40,8 @@ const defaultTestimonials: Testimonial[] = [
     id: "3",
     text: "Neetil's technical expertise and problem-solving skills were exactly what we needed. They consistently delivered high-quality code and were able to tackle complex challenges effectively.",
     author: {
-      name: "James Wilson",
-      title: "Tech Lead",
+      name: "Shyamal Sheorey",
+      title: "Expert in Marketing",
       avatarUrl: "https://picsum.photos/seed/person3/100/100",
     },
   },

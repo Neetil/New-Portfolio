@@ -145,12 +145,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section (NEW) */}
+      {/* Testimonials Section (UPDATED) */}
       <section id="testimonials" className="container py-10">
         <div className="space-y-4 mb-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Client Testimonials</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Testimonials</h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-            What people are saying about working with me.
+            What people are saying about me.
           </p>
         </div>
         <div className="mt-10 max-w-4xl mx-auto">
