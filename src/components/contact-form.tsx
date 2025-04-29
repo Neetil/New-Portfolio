@@ -16,7 +16,8 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Send } from 'lucide-react';
+import { CheckCircle2, Loader2, Send } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -30,6 +31,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<ContactFormValues>({
@@ -44,29 +46,65 @@ export function ContactForm() {
 
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
+    setIsSuccess(false);
 
-    // Simulate API call with a timeout
     try {
-      // In a real app, this would be an API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Send the form data to the API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-      console.log('Form submitted:', data);
+      if (!response.ok) {
+        // If the response is not ok, throw an error
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send message');
+      }
 
+      // If successful, show a success toast
       toast({
         title: 'Message sent!',
         description: 'Thanks for reaching out. I\'ll get back to you soon.',
       });
 
+      // Show success state
+      setIsSuccess(true);
+
+      // Reset the form
       form.reset();
     } catch (error) {
+      console.error('Error sending message:', error);
+
+      // Show an error toast
       toast({
         variant: 'destructive',
         title: 'Something went wrong',
-        description: 'Your message could not be sent. Please try again later.',
+        description: error instanceof Error
+          ? error.message
+          : 'Your message could not be sent. Please try again later.',
       });
     } finally {
       setIsSubmitting(false);
     }
+  }
+
+  // If the form was successfully submitted, show a success message
+  if (isSuccess) {
+    return (
+      <Card className="p-6 text-center">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <CheckCircle2 className="h-16 w-16 text-green-500" />
+          <h3 className="text-2xl font-medium">Message Sent!</h3>
+          <p className="text-muted-foreground">
+            Thank you for reaching out. I'll get back to you as soon as possible.
+          </p>
+          <Button onClick={() => setIsSuccess(false)}>Send another message</Button>
+        </div>
+      </Card>
+    );
   }
 
   return (
