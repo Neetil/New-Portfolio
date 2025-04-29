@@ -20,7 +20,7 @@ interface Testimonial {
 const defaultTestimonials: Testimonial[] = [
   {
     id: "1",
-    text: "Neetil is an exceptional developer who delivered our project on time and exceeded our expectations. The attention to detail and clean code made a huge difference.",
+    text: "Neetil shows exceptional growth and maturity in his work. Always ready to learn, take initiative, and deliver quality—an asset to any team.",
     author: {
       name: "Jasneet Singh Saini",
       title: "Student Placement Coordinator and Influencer",
@@ -29,7 +29,7 @@ const defaultTestimonials: Testimonial[] = [
   },
   {
     id: "2",
-    text: "Working with Neetil was a great experience. They understood our requirements perfectly and implemented everything with impressive speed and quality.",
+    text: "From late-night builds to last-minute fixes, Neetil's been solid throughout. He makes tough tasks feel easy and adds fun to every project.",
     author: {
       name: "Nirjara Jain",
       title: "Student",
@@ -38,7 +38,7 @@ const defaultTestimonials: Testimonial[] = [
   },
   {
     id: "3",
-    text: "Neetil's technical expertise and problem-solving skills were exactly what we needed. They consistently delivered high-quality code and were able to tackle complex challenges effectively.",
+    text: "Neetil has a great balance of creativity and discipline. He brings fresh ideas without losing focus on the team's goals. Very promising developer!",
     author: {
       name: "Shyamal Sheorey",
       title: "Expert in Marketing",
