@@ -33,7 +33,7 @@ const defaultTestimonials: Testimonial[] = [
     author: {
       name: "Nirjara Jain",
       title: "Student",
-      avatarUrl: "/images/testimonials/nirjara-jain.jpg",
+      avatarUrl: "/images/testimonials/nirjara-jain.jpg", // updated to use the provided image
     },
   },
   {
