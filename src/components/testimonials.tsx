@@ -20,7 +20,7 @@ interface Testimonial {
 const defaultTestimonials: Testimonial[] = [
   {
     id: "0",
-    text: "I've had the pleasure of mentoring Neetil during college projects, and I must say he's extremely passionate about his work. His understanding of frontend development, combined with a great design sense, makes him stand out.",
+    text: "I've had the pleasure of mentoring Neetil during college projects, and I must say he's extremely passionate about his work. His understanding of frontend development, combined with a great design sense.",
     author: {
       name: "Ramkrishna Swarnkar",
       title: "Founder of NotesBuddy",
