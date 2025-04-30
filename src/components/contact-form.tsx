@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -18,6 +18,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { CheckCircle2, Loader2, Send } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import emailjs from '@emailjs/browser';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -29,10 +30,18 @@ const contactFormSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
+// EmailJS configuration
+// You'll need to sign up for a free account at https://www.emailjs.com/
+// and create a template with these variables: {{name}}, {{email}}, {{subject}}, {{message}}
+const EMAILJS_SERVICE_ID = 'service_gmail'; // Replace with your Service ID
+const EMAILJS_TEMPLATE_ID = 'template_contact'; // Replace with your Template ID
+const EMAILJS_PUBLIC_KEY = 'jpb-6V5iVHkG1ZkxI'; // Replace with your Public Key
+
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -49,20 +58,23 @@ export function ContactForm() {
     setIsSuccess(false);
 
     try {
-      // Send the form data to the API endpoint
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      // Initialize EmailJS with your public key
+      emailjs.init(EMAILJS_PUBLIC_KEY);
 
-      if (!response.ok) {
-        // If the response is not ok, throw an error
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to send message');
-      }
+      // Prepare the template parameters
+      const templateParams = {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+      };
+
+      // Send the email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
 
       // If successful, show a success toast
       toast({
@@ -109,7 +121,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid gap-6 sm:grid-cols-2">
           <FormField
             control={form.control}
