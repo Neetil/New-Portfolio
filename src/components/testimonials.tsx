@@ -24,7 +24,7 @@ const defaultTestimonials: Testimonial[] = [
     author: {
       name: "Jasneet Singh Saini",
       title: "Student Placement Coordinator and Influencer",
-      avatarUrl: "https://picsum.photos/seed/person1/100/100",
+      avatarUrl: "/images/testimonials/jasneet-singh-saini.jpg",
     },
   },
   {
