@@ -19,6 +19,15 @@ interface Testimonial {
 // Sample testimonials - replace with your actual testimonials
 const defaultTestimonials: Testimonial[] = [
   {
+    id: "0",
+    text: "I've had the pleasure of mentoring Neetil during college projects, and I must say he's extremely sincere and passionate about his work. His understanding of frontend development, combined with a great design sense, makes him stand out.",
+    author: {
+      name: "Ramkrishna Swarnkar",
+      title: "Founder of Notesbuddy",
+      avatarUrl: "/images/testimonials/ramkrishna-swarnkar.jpg",
+    },
+  },
+  {
     id: "1",
     text: "Neetil shows exceptional growth and maturity in his work. Always ready to learn, take initiative, and deliver quality—an asset to any team.",
     author: {
@@ -33,7 +42,7 @@ const defaultTestimonials: Testimonial[] = [
     author: {
       name: "Nirjara Jain",
       title: "Student",
-      avatarUrl: "/images/testimonials/nirjara-jain.jpg", // updated to use the provided image
+      avatarUrl: "/images/testimonials/nirjara-jain.jpg",
     },
   },
   {
