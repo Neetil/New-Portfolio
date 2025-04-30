@@ -33,9 +33,9 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 // EmailJS configuration
 // You'll need to sign up for a free account at https://www.emailjs.com/
 // and create a template with these variables: {{name}}, {{email}}, {{subject}}, {{message}}
-const EMAILJS_SERVICE_ID = 'service_gmail'; // Replace with your Service ID
-const EMAILJS_TEMPLATE_ID = 'template_contact'; // Replace with your Template ID
-const EMAILJS_PUBLIC_KEY = 'jpb-6V5iVHkG1ZkxI'; // Replace with your Public Key
+const EMAILJS_SERVICE_ID = 'service_9pkwqp6'; // Replace with your Service ID
+const EMAILJS_TEMPLATE_ID = 'template_9zb2kxs'; // Replace with your Template ID
+const EMAILJS_PUBLIC_KEY = 'NE3_mzxs8G5QJGRhj'; // Replace with your Public Key
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
