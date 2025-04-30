@@ -42,7 +42,7 @@ const defaultTestimonials: Testimonial[] = [
     author: {
       name: "Shyamal Sheorey",
       title: "Expert in Marketing",
-      avatarUrl: "https://picsum.photos/seed/person3/100/100",
+      avatarUrl: "/images/testimonials/shyamal-sheorey.jpg",
     },
   },
 ];
