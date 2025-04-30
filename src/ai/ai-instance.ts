@@ -1,12 +1,25 @@
-import {genkit} from 'genkit';
-import {googleAI} from '@genkit-ai/googleai';
+import { createAI } from 'genkit/ai';
+import { GoogleAIChat } from '@genkit-ai/googleai/chat';
+import { GoogleAI } from '@genkit-ai/googleai';
 
-export const ai = genkit({
-  promptDir: './prompts',
-  plugins: [
-    googleAI({
-      apiKey: process.env.GOOGLE_GENAI_API_KEY,
+// Configure the AI instance with appropriate models
+export const ai = createAI({
+  defaultProvider: 'googleai',
+  providers: {
+    // Configure Google AI as the main provider
+    googleai: new GoogleAIChat({
+      apiKey: process.env.GOOGLE_API_KEY || '',
+      model: 'gemini-pro',
+      defaultOptions: {
+        // Configure default options for the chat model
+        temperature: 0.7,
+        maxOutputTokens: 1000,
+      },
     }),
-  ],
-  model: 'googleai/gemini-2.0-flash',
+  },
+});
+
+// Export Google AI instance for direct access in our flows
+export const googleAI = new GoogleAI({
+  apiKey: process.env.GOOGLE_API_KEY || '',
 });
