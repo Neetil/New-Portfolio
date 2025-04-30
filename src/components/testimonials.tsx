@@ -23,7 +23,7 @@ const defaultTestimonials: Testimonial[] = [
     text: "I've had the pleasure of mentoring Neetil during college projects, and I must say he's extremely sincere and passionate about his work. His understanding of frontend development, combined with a great design sense, makes him stand out.",
     author: {
       name: "Ramkrishna Swarnkar",
-      title: "Founder of Notesbuddy",
+      title: "Founder of NotesBuddy",
       avatarUrl: "/images/testimonials/ramkrishna-swarnkar.jpg",
     },
   },
