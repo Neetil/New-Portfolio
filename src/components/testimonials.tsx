@@ -33,7 +33,7 @@ const defaultTestimonials: Testimonial[] = [
     author: {
       name: "Nirjara Jain",
       title: "Student",
-      avatarUrl: "https://picsum.photos/seed/person2/100/100",
+      avatarUrl: "/images/testimonials/nirjara-jain.jpg",
     },
   },
   {
