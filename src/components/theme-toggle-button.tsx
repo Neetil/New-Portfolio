@@ -11,19 +11,17 @@ export function ThemeToggleButton() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
-  // Ensure the component is mounted before rendering the theme-specific UI
-  // to avoid hydration mismatch issues.
+
   React.useEffect(() => setMounted(true), []);
 
   const toggleTheme = () => {
-    // Use resolvedTheme to handle 'system' preference correctly and toggle
+    
     const currentEffectiveTheme = theme === 'system' ? resolvedTheme : theme;
     setTheme(currentEffectiveTheme === 'dark' ? 'light' : 'dark');
   };
 
   if (!mounted) {
-    // Render a placeholder or null until mounted to prevent hydration errors
-    // and maintain layout consistency.
+    
     return <Button variant="ghost" size="icon" disabled className="h-[1.2rem] w-[1.2rem]" />;
   }
 
