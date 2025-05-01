@@ -86,7 +86,7 @@ export default function Home() {
         </div>
          <div className="relative aspect-square w-full max-w-[300px] mx-auto lg:mx-0 lg:justify-self-end animate-fade-in">
             <Image
-                src="/images/neetil-profilee.jpg"
+                src="/images/neetil-profile.jpg"
                 alt="Neetil"
                 fill
                 className="rounded-full object-cover shadow-lg border-4 border-secondary"
