@@ -61,7 +61,7 @@ const skills = [
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
+      {/* hHero Section */}
       <section id="home" className="container grid lg:grid-cols-2 gap-10 items-center">
         <div className="flex flex-col items-start space-y-4 text-center lg:text-left animate-fade-in-up">
            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
