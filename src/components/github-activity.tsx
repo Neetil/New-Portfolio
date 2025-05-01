@@ -24,7 +24,7 @@ interface GitHubActivity {
   title: string;
 }
 
-// Sample GitHub repositories
+
 const sampleRepos: GitHubRepo[] = [
   {
     name: 'portfolio-website',
@@ -52,7 +52,7 @@ const sampleRepos: GitHubRepo[] = [
   }
 ];
 
-// Sample GitHub activities
+
 const sampleActivities: GitHubActivity[] = [
   {
     type: 'commit',
