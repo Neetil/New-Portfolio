@@ -67,56 +67,6 @@ New-Portfolio/
 - **Animation**: CSS Animations
 
 
-## Getting Started
-
-### Prerequisites
-- Node.js 18+ or Bun
-- Git
-
-### Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/Neetil/New-Portfolio.git
-cd New-Portfolio
-```
-
-2. Install dependencies
-```bash
-# With npm
-npm install
-# Or with Bun
-bun install
-```
-
-3. Create a `.env` file based on .env.example (if provided)
-For EmailJS, you'll need:
-```
-EMAILJS_SERVICE_ID=your_service_id
-EMAILJS_TEMPLATE_ID=your_template_id
-EMAILJS_PUBLIC_KEY=your_public_key
-```
-
-4. Start the development server
-```bash
-# With npm
-npm run dev
-# Or with Bun
-bun run dev
-```
-
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Customization
-
-### Changing Content
-- Edit `src/app/page.tsx` to update main content sections
-- Modify personal information, projects, skills, and testimonials
-- Replace images in the `public/images` directory with your own
-
-### Styling
-- Customize colors and theme in `tailwind.config.ts`
-- Edit global styles in `src/app/globals.css`
 
 ## Deployment
 
@@ -127,13 +77,6 @@ The site is currently deployed on Vercel. To deploy your own version:
 3. Configure environment variables in Vercel dashboard
 4. Deploy!
 
-## Recent Updates
-
-- Updated testimonials with new quotes and images
-- Implemented contact form with EmailJS for direct Gmail delivery
-- Fixed resume download functionality
-- Made theme toggle visible on mobile devices
-- Added Campus Vibe project with SVG screenshot
 
 ## License
 
