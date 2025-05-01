@@ -14,9 +14,9 @@ Visit the live portfolio: [neetil.in](https://www.neetil.in)
 - **Responsive Design**: Fully responsive layout that looks great on all devices
 - **Dark/Light Theme**: Toggle between dark and light modes with smooth transitions
 - **Animations**: Subtle, performant animations for enhanced user experience
-- **Music Player**: Background music player with Sunflower track
+- **Music Player**: Background music player with Sunflower track by Post Malone
 - **Back-to-Top Button**: Easy navigation for longer scrolling
-- **AI Assistant**: Interactive AI chat assistant for visitors
+- **Portfolio AI Assistant**: Interactive AI chat assistant for visitors
 
 ### Main Sections
 - **Hero Section**: Introduction with profile image and call-to-action buttons
