@@ -6,7 +6,7 @@ A modern, responsive personal portfolio website built with Next.js, TypeScript, 
 
 ## Live Demo
 
-Visit the live portfolio: [portfolioneetil.vercel.app](https://portfolioneetil.vercel.app)
+Visit the live portfolio: [portfolioneetil.vercel.app](https://www.neetil.in)
 
 ## Features
 
