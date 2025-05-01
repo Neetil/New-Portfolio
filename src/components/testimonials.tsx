@@ -16,7 +16,7 @@ interface Testimonial {
   };
 }
 
-// Sample testimonials - replace with your actual testimonials
+
 const defaultTestimonials: Testimonial[] = [
   {
     id: "0",
@@ -69,7 +69,7 @@ export function Testimonials({ testimonials = defaultTestimonials }: Testimonial
   useEffect(() => {
     const interval = setInterval(() => {
       showNextTestimonial();
-    }, 8000); // Change every 8 seconds
+    }, 8000); 
 
     return () => clearInterval(interval);
   }, [currentIndex, testimonials.length]);
