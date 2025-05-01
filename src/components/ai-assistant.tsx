@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Copy, CheckCheck, RefreshCw } from 'lucide-react';
 
-// Sample feedback responses for demonstration purposes
+
 const sampleFeedbacks = [
   {
     title: "Professional Developer Portfolio",
@@ -111,7 +111,7 @@ Your portfolio shows strong fundamentals - implementing these suggestions will h
   }
 ];
 
-// Sample portfolio examples for inspiration
+
 const examplePortfolios = [
   "My portfolio showcases 5 web development projects using React and Node.js. It has an about me section, skills with proficiency bars, and a contact form. The design is minimal with a dark/light theme toggle.",
   "I've created a UX/UI design portfolio with case studies for 3 major projects. Each case study includes the problem, process, and final design. I also have a skills section and testimonials from clients.",
@@ -125,7 +125,7 @@ export function AiAssistant() {
   const [copied, setCopied] = useState(false);
   const [activeExample, setActiveExample] = useState(-1);
 
-  // Reset copied state after 2 seconds
+
   useEffect(() => {
     if (copied) {
       const timer = setTimeout(() => setCopied(false), 2000);
@@ -250,7 +250,7 @@ export function AiAssistant() {
               <CardContent className="pt-2 pb-6">
                 <div className="prose prose-sm max-w-none dark:prose-invert">
                   {feedback.split('\n').map((paragraph, index) => {
-                    // Handle Markdown headings
+                 
                     if (paragraph.startsWith('# ')) {
                       return <h1 key={index} className="text-xl font-bold mt-2 mb-4">{paragraph.slice(2)}</h1>;
                     } else if (paragraph.startsWith('## ')) {
