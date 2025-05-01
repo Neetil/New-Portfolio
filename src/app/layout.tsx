@@ -5,15 +5,14 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
-import { BackToTop } from "@/components/back-to-top"; 
-import { ThemeProvider } from '@/providers/theme-provider'; 
+import { BackToTop } from "@/components/back-to-top";
+import { ThemeProvider } from '@/providers/theme-provider';
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 });
-
-
 
 export const metadata: Metadata = {
   title: 'Portfolio Pilot | Neetil',
@@ -51,25 +50,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-        <link rel="icon" href="/images/favicon/n-favicon.png" sizes="any" />
+      <link rel="icon" href="/images/favicon/n-favicon.png" sizes="any" />
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
           geistSans.variable
-         
         )}
       >
-        <ThemeProvider> {/* Wrap with ThemeProvider */}
+        <ThemeProvider>
           <Header />
-          {/* Applied consistent horizontal padding */}
           <main className="flex flex-col min-h-[calc(100vh-theme(spacing.16))] px-8 sm:px-12 md:px-16 lg:px-20 xl:px-48">
             {children}
           </main>
           <Footer />
           <Toaster />
           <BackToTop />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
