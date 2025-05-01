@@ -14,7 +14,7 @@ interface SkillsProgressProps {
   animated?: boolean;
 }
 
-// Default skills - replace with your actual skills and proficiency levels
+
 const defaultSkills: Skill[] = [
   { name: "JavaScript", level: 90, category: "Frontend" },
   { name: "React", level: 85, category: "Frontend" },
@@ -49,19 +49,19 @@ export function SkillsProgress({ skills = defaultSkills, animated = true }: Skil
 
   useEffect(() => {
     if (!animated) {
-      // If not animated, set all skills to their full level immediately
+     
       setProgress(Object.fromEntries(skills.map(skill => [skill.name, skill.level])));
       return;
     }
 
-    // Initial delay before animation starts
+
     const initialTimeout = setTimeout(() => {
       // Animate each skill with a staggered start
       skills.forEach((skill, index) => {
         const startDelay = index * 100; // Stagger start of animations
 
         setTimeout(() => {
-          // Animate from 0 to the skill level
+    
           let currentValue = 0;
           const increment = skill.level / 15; // Controls animation speed
           const intervalId = setInterval(() => {
