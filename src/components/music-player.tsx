@@ -6,7 +6,7 @@ import { Music, Pause } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useToast } from '@/hooks/use-toast';
 
-// Point to the song in the public directory
+
 const MUSIC_URL = "/sunflower.mp3";
 
 export function MusicPlayer() {
@@ -16,17 +16,16 @@ export function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const { toast } = useToast();
 
-  // Preload the audio metadata
+  
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.preload = 'metadata';
 
-      // Add canplaythrough event listener to set loaded state
+  
       const handleCanPlayThrough = () => {
         setIsLoaded(true);
       };
 
-      // Add error event listener
       const handleError = (e: ErrorEvent) => {
         console.error('Audio error:', e);
         setHasError(true);
@@ -76,7 +75,7 @@ export function MusicPlayer() {
     setIsPlaying(!isPlaying);
   };
 
-  // Update state when audio naturally ends or is paused/played externally
+  
   useEffect(() => {
     const audioElement = audioRef.current;
     if (!audioElement) return;
