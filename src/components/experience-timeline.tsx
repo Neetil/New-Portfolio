@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BriefcaseIcon, GraduationCapIcon } from "lucide-react";
 
-// Experience data type
+
 interface ExperienceItem {
   id: number;
   title: string;
@@ -15,7 +15,7 @@ interface ExperienceItem {
   skills?: string[];
 }
 
-// Default experience data - replace with your actual experience
+
 const defaultExperiences: ExperienceItem[] = [
   {
     id: 1,
