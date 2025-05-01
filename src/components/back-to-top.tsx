@@ -7,7 +7,7 @@ import { ArrowUpIcon } from "lucide-react";
 export function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled down
+  // button when scrolled down
   const toggleVisibility = () => {
     if (window.scrollY > 500) {
       setIsVisible(true);
@@ -16,7 +16,7 @@ export function BackToTop() {
     }
   };
 
-  // Set up scroll event listener
+  // scroll event listener
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
