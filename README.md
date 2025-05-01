@@ -29,11 +29,10 @@ Visit the live portfolio: [neetil.in](https://www.neetil.in)
 - **Modern Stack**: Next.js 15 with TypeScript and React 18
 - **Component Library**: Uses shadcn/ui components built on Radix UI primitives
 - **Styling**: Tailwind CSS for utility-first styling approach
-- **Form Handling**: React Hook Form with Zod validation
 - **Email Integration**: EmailJS for serverless email functionality
 - **Theme Management**: next-themes for persistent theme preferences
 - **Animations**: Custom CSS animations for smooth section transitions
-- **SEO Optimized**: Proper metadata and Open Graph tags
+
 
 ## Project Structure
 
