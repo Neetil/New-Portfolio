@@ -31,11 +31,10 @@ const contactFormSchema = z.object({
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 // EmailJS configuration
-// You'll need to sign up for a free account at https://www.emailjs.com/
-// and create a template with these variables: {{name}}, {{email}}, {{subject}}, {{message}}
-const EMAILJS_SERVICE_ID = 'service_9pkwqp6'; // Replace with your Service ID
-const EMAILJS_TEMPLATE_ID = 'template_9zb2kxs'; // Replace with your Template ID
-const EMAILJS_PUBLIC_KEY = 'NE3_mzxs8G5QJGRhj'; // Replace with your Public Key
+
+const EMAILJS_SERVICE_ID = 'service_9pkwqp6'; 
+const EMAILJS_TEMPLATE_ID = 'template_9zb2kxs'; 
+const EMAILJS_PUBLIC_KEY = 'NE3_mzxs8G5QJGRhj'; 
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -90,7 +89,7 @@ export function ContactForm() {
     } catch (error) {
       console.error('Error sending message:', error);
 
-      // Show an error toast
+      //  error toast
       toast({
         variant: 'destructive',
         title: 'Something went wrong',
@@ -103,7 +102,7 @@ export function ContactForm() {
     }
   }
 
-  // If the form was successfully submitted, show a success message
+  // success message
   if (isSuccess) {
     return (
       <Card className="p-6 text-center">
