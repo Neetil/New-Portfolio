@@ -2,11 +2,11 @@ import { createAI } from 'genkit/ai';
 import { GoogleAIChat } from '@genkit-ai/googleai/chat';
 import { GoogleAI } from '@genkit-ai/googleai';
 
-// Configure the AI instance with appropriate models
+// AI instance with appropriate models
 export const ai = createAI({
   defaultProvider: 'googleai',
   providers: {
-    // Configure Google AI as the main provider
+    //  Google AI as the main provider
     googleai: new GoogleAIChat({
       apiKey: process.env.GOOGLE_API_KEY || '',
       model: 'gemini-pro',
