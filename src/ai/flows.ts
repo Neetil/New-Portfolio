@@ -1,17 +1,13 @@
 /**
  * @fileOverview Provides AI flows for generating feedback on a portfolio description.
- *
- * - portfolioAnalysisFlow - A Genkit flow that takes a portfolio description and returns detailed, structured feedback.
- * - PortfolioFeedbackInputSchema - Zod schema for the input to the original flow (deprecated in favor of portfolioAnalysisFlow).
- * - PortfolioFeedbackOutputSchema - Zod schema for the output of the original flow.
- * - getPortfolioFeedback - An exported function to run the original portfolio feedback flow.
+
  */
 
 import { ai } from '@/ai/ai-instance';
 import { runFlow, createFlow } from 'genkit';
 import { z } from 'zod';
 
-// Define Zod schemas for input and output (for the original flow)
+
 export const PortfolioFeedbackInputSchema = z.string().describe('A textual description of the personal portfolio.');
 export type PortfolioFeedbackInput = z.infer<typeof PortfolioFeedbackInputSchema>;
 
@@ -20,7 +16,7 @@ export const PortfolioFeedbackOutputSchema = z.object({
 });
 export type PortfolioFeedbackOutput = z.infer<typeof PortfolioFeedbackOutputSchema>;
 
-// Define the prompt using the configured AI instance (original flow)
+
 const feedbackPrompt = ai.definePrompt({
   name: 'portfolioFeedbackPrompt',
   input: { schema: PortfolioFeedbackInputSchema },
@@ -38,11 +34,11 @@ Portfolio Description:
 Feedback:
 `,
   config: {
-    temperature: 0.5, // Moderate temperature for balanced creativity and coherence
+    temperature: 0.5, 
   },
 });
 
-// Define the original flow using the prompt
+
 export const portfolioFeedbackFlow = ai.defineFlow(
   {
     name: 'portfolioFeedbackFlow',
@@ -51,7 +47,7 @@ export const portfolioFeedbackFlow = ai.defineFlow(
   },
   async (portfolioDescription) => {
     const { output } = await feedbackPrompt(portfolioDescription);
-    // Ensure output is not null; if it is, return an empty feedback object or handle error
+    
     return output ?? { feedback: "Could not generate feedback." };
   }
 );
