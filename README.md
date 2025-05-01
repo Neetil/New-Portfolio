@@ -63,11 +63,9 @@ New-Portfolio/
 - **UI Library**: React 18
 - **Styling**: Tailwind CSS
 - **Components**: shadcn/ui (built on Radix UI)
-- **Forms**: React Hook Form, Zod
 - **Email**: EmailJS
 - **Animation**: CSS Animations
-- **Package Manager**: Bun
-- **Deployment**: Vercel
+
 
 ## Getting Started
 
