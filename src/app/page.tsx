@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectCard } from '@/components/project-card';
 import { AiAssistant } from '@/components/ai-assistant';
-import { Testimonials } from '@/components/testimonials'; // Import testimonials component
-import { ContactForm } from '@/components/contact-form'; // Import contact form
+import { Testimonials } from '@/components/testimonials'; 
+import { ContactForm } from '@/components/contact-form'; 
 import { Code, Download, Layers, Mail } from 'lucide-react';
 
-// Project showcase with live demos
+
 const projects = [
   {
     title: "Campus Vibe",
@@ -44,18 +44,17 @@ const projects = [
   },
 ];
 
-// Dummy skills data - replace with your actual skills
+
 const skills = [
   { name: "JavaScript", icon: Code },
-  { name: "Java", icon: Code }, // Added Java
+  { name: "Java", icon: Code }, 
   { name: "React", icon: Code },
   { name: "Next.js", icon: Code },
   { name: "Node.js", icon: Code },
   { name: "HTML & CSS", icon: Code },
   { name: "Tailwind CSS", icon: Code },
   { name: "SQL", icon: Code },
-  // { name: "Git", icon: Code }, // Removed Git
-  // { name: "Docker", icon: Code }, // Removed Docker
+
   { name: "Figma", icon: Layers },
 ];
 
@@ -235,7 +234,7 @@ const animationStyles = `
   /* Add more delays as needed */
 `;
 
-// Inject styles - In a real app, prefer adding to globals.css or a dedicated CSS module
+// Inject styles 
 if (typeof window !== 'undefined') {
   let styleSheet = document.getElementById('animation-styles');
   if (!styleSheet) {
