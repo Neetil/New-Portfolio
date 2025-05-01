@@ -1,13 +1,13 @@
-'use client'; // Required for Sheet state management
+'use client'; 
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { ThemeToggleButton } from './theme-toggle-button';
-import { MusicPlayer } from './music-player'; // Import the MusicPlayer component
-import { useState } from 'react'; // Import useState for sheet management
-import { cn } from '@/lib/utils'; // Import cn for conditional classes
+import { MusicPlayer } from './music-player'; 
+import { useState } from 'react'; 
+import { cn } from '@/lib/utils'; 
 
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false); // State for mobile sheet
