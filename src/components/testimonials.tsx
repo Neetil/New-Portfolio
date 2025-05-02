@@ -59,7 +59,7 @@ const defaultTestimonials: Testimonial[] = [
     author: {
       name: "Agrim Jain",
       title: "Founder of Apex Stride 24",
-      avatarUrl: "",
+      avatarUrl: "/images/testimonials/agrim-jain.jpg",
     },
   },
 ];
