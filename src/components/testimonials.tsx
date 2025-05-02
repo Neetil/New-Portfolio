@@ -16,7 +16,6 @@ interface Testimonial {
   };
 }
 
-
 const defaultTestimonials: Testimonial[] = [
   {
     id: "0",
@@ -54,6 +53,15 @@ const defaultTestimonials: Testimonial[] = [
       avatarUrl: "/images/testimonials/shyamal-sheorey.jpg",
     },
   },
+  {
+    id: "4",
+    text: "A nice friend, a good developer, and the kind of teammate who turns bugs into features with a smile and with a playlist ready for every mood and moment.",
+    author: {
+      name: "Agrim Jain",
+      title: "Founder of Apex Stride 24",
+      avatarUrl: "",
+    },
+  },
 ];
 
 interface TestimonialsProps {
@@ -69,7 +77,7 @@ export function Testimonials({ testimonials = defaultTestimonials }: Testimonial
   useEffect(() => {
     const interval = setInterval(() => {
       showNextTestimonial();
-    }, 8000); 
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [currentIndex, testimonials.length]);
@@ -110,7 +118,9 @@ export function Testimonials({ testimonials = defaultTestimonials }: Testimonial
               <p className="text-lg mb-6 italic text-muted-foreground">"{testimonial.text}"</p>
               <div className="flex items-center">
                 <Avatar className="h-12 w-12 mr-4">
-                  <AvatarImage src={testimonial.author.avatarUrl} alt={testimonial.author.name} />
+                  {testimonial.author.avatarUrl ? (
+                    <AvatarImage src={testimonial.author.avatarUrl} alt={testimonial.author.name} />
+                  ) : null}
                   <AvatarFallback>{testimonial.author.name.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div>
