@@ -51,7 +51,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
       <link rel="icon" href="/images/favicon/n-favicon.png" sizes="any" />
+         {/* Google AdSense Script */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1176797311571595"
+          crossOrigin="anonymous"
+        ></script>
+        </head>
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
