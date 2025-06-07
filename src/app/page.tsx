@@ -68,7 +68,7 @@ export default function Home() {
             Neetil
           </h1>
           <p className="text-xl text-muted-foreground md:text-2xl">
-            Full-Stack Developer | UI/UX Enthusiast
+             Developer | UI/UX Enthusiast
           </p>
           <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Passionate about building beautiful, functional, and user-centric web experiences. Let's create something amazing together.
