@@ -28,7 +28,7 @@ export function Header() {
       {/* Apply consistent horizontal padding */}
       <div className="container flex h-14 items-center px-8 sm:px-12 md:px-16 lg:px-20 xl:px-48">
         <Link href="#home" className="mr-6 flex items-center space-x-2">
-          <span className="font-bold sm:inline-block">Portfolio Pilot</span>
+          <span className="font-bold sm:inline-block">Portfolio</span>
         </Link>
         <nav className="hidden gap-6 md:flex flex-1">
           {navItems.map((item) => (
