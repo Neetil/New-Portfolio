@@ -66,7 +66,7 @@ export default function Home() {
         <div className="flex flex-col space-y-6">
           {/* Heading Section */}
           <div className="space-y-3">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+            <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
                 Hi, I'm{' '}
               </span>
@@ -74,7 +74,7 @@ export default function Home() {
                 Neetil
               </span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-muted-foreground">
+            <p className="text-xl sm:text-xl md:text-2xl font-semibold text-muted-foreground">
               Full Stack Developer
             </p>
           </div>
