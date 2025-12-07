@@ -93,7 +93,7 @@ body {
   }
   
   .container {
-    @apply w-full max-w-3xl mx-auto px-20 sm:px-24 md:px-40 lg:px-56 xl:px-72 2xl:px-96;
+    @apply w-full max-w-3xl mx-auto px-[5.5rem] sm:px-28 md:px-44 lg:px-60 xl:px-[19rem] 2xl:px-[26rem];
   }
 
   /* Modern gradient text effects */

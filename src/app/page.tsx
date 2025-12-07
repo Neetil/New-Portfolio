@@ -66,7 +66,7 @@ export default function Home() {
         <div className="flex flex-col space-y-6">
           {/* Heading Section */}
           <div className="space-y-3">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
                 Hi, I'm{' '}
               </span>
@@ -74,14 +74,14 @@ export default function Home() {
                 Neetil
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-muted-foreground">
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-muted-foreground">
               Full Stack Developer
             </p>
           </div>
 
           {/* Description with Tech Stack */}
           <div className="space-y-4">
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
               I create dynamic web applications using{' '}
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium">
                 TypeScript
@@ -104,12 +104,12 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg">
+            <Button asChild size="default">
               <Link href="#projects">
                 View Projects
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="border-2">
+            <Button variant="outline" size="default" asChild className="border-2">
               <Link href="/neetil-resume.pdf" target="_blank" download="Neetil Resume.pdf">
                 <Download className="mr-2 h-4 w-4" /> 
                 Download Resume
