@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectCard } from '@/components/project-card';
-import { AiAssistant } from '@/components/ai-assistant';
 import { Testimonials } from '@/components/testimonials'; 
 import { ContactForm } from '@/components/contact-form'; 
 import { Code, Download, Layers, Mail } from 'lucide-react';
@@ -128,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="container py-10">
+      <section id="projects" className="container">
         <div className="space-y-4 mb-8 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects Showcase</h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
@@ -145,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section (UPDATED) */}
-      <section id="testimonials" className="container py-10">
+      <section id="testimonials" className="container">
         <div className="space-y-4 mb-8 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Testimonials</h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
@@ -158,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section (NEW) */}
-      <section id="contact" className="container py-10">
+      <section id="contact" className="container">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
             <div className="space-y-4">
@@ -196,8 +195,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AI Assistant Section */}
-      <AiAssistant />
 
     </>
   );

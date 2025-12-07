@@ -87,6 +87,10 @@ body {
     scroll-behavior: smooth;
   }
   section {
-     @apply py-12 md:py-20 lg:py-24;
+     @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .container {
+    @apply w-full max-w-3xl mx-auto px-20 sm:px-24 md:px-40 lg:px-56 xl:px-72 2xl:px-96;
   }
 }

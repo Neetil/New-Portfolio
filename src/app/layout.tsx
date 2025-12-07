@@ -68,7 +68,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Header />
-          <main className="flex flex-col min-h-[calc(100vh-theme(spacing.16))] px-8 sm:px-12 md:px-16 lg:px-20 xl:px-48">
+          <main className="flex flex-col min-h-[calc(100vh-theme(spacing.16))]">
             {children}
           </main>
           <Footer />

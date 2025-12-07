@@ -18,7 +18,6 @@ export function Header() {
     { label: 'Projects', href: '#projects' },
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
-    { label: 'AI Assistant', href: '#ai-assistant' },
   ];
 
   const closeSheet = () => setIsSheetOpen(false);
@@ -26,7 +25,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Apply consistent horizontal padding */}
-      <div className="container flex h-14 items-center px-8 sm:px-12 md:px-16 lg:px-20 xl:px-48">
+      <div className="container flex h-14 items-center">
         <Link href="#home" className="mr-6 flex items-center space-x-2">
           <span className="font-bold sm:inline-block">Portfolio</span>
         </Link>

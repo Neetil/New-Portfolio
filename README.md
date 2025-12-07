@@ -16,7 +16,6 @@ Visit the live portfolio: [neetil.in](https://www.neetil.in)
 - **Animations**: Subtle, performant animations for enhanced user experience
 - **Music Player**: Background music player with Sunflower track by Post Malone
 - **Back-to-Top Button**: Easy navigation for longer scrolling
-- **Portfolio AI Assistant**: Interactive AI chat assistant for visitors
 
 ### Main Sections
 - **Hero Section**: Introduction with profile image and call-to-action buttons
@@ -43,7 +42,6 @@ New-Portfolio/
 │   ├── neetil-resume.pdf # Downloadable resume
 │   └── sunflower.mp3  # Background music file
 ├── src/
-│   ├── ai/            # AI assistant functionality
 │   ├── app/           # Next.js app router pages
 │   ├── components/    # React components
 │   │   ├── ui/        # UI components from shadcn/ui
