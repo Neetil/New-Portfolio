@@ -108,7 +108,7 @@ export function MusicPlayer() {
               size="icon"
               onClick={togglePlayPause}
               aria-label={isPlaying ? 'Pause Sunflower song' : 'Play Sunflower song'}
-              className={`relative ${isPlaying ? 'bg-primary/10' : ''} ${hasError ? 'opacity-50 cursor-not-allowed' : ''}`}
+              className={`relative music-player-btn ${isPlaying ? 'bg-primary/10' : ''} ${hasError ? 'opacity-50 cursor-not-allowed' : ''}`}
               disabled={hasError}
             >
               {isPlaying ? (

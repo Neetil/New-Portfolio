@@ -23,20 +23,23 @@ export function Header() {
   const closeSheet = () => setIsSheetOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 shadow-sm">
       {/* Apply consistent horizontal padding */}
-      <div className="container flex h-14 items-center">
-        <Link href="#home" className="mr-6 flex items-center space-x-2">
-          <span className="font-bold sm:inline-block">Portfolio</span>
+      <div className="container flex h-16 items-center">
+        <Link href="#home" className="mr-6 flex items-center space-x-2 group">
+          <span className="font-bold text-lg bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent group-hover:from-accent group-hover:to-secondary transition-all">
+            Portfolio
+          </span>
         </Link>
-        <nav className="hidden gap-6 md:flex flex-1">
+        <nav className="hidden gap-8 md:flex flex-1">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="relative flex items-center text-sm font-medium text-muted-foreground transition-all hover:text-foreground group"
             >
               {item.label}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent to-secondary group-hover:w-full transition-all duration-300"></span>
             </Link>
           ))}
         </nav>
