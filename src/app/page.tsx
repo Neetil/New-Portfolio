@@ -7,6 +7,7 @@ import { Testimonials } from '@/components/testimonials';
 import { ContactForm } from '@/components/contact-form'; 
 import { Code, Download, Layers, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { CursorStatus } from '@/components/cursor-status';
+import { GitHubContributions } from '@/components/github-contributions';
 
 
 const projects = [
@@ -94,10 +95,7 @@ export default function Home() {
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium">
                 Next.js
               </span>
-              {' '}and{' '}
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium">
-                PostgreSQL
-              </span>
+              
               . Specializing in <strong className="text-foreground font-semibold">user interface</strong> design and development. Creating <strong className="text-foreground font-semibold">scalable solutions</strong>, and exploring <strong className="text-foreground font-semibold">GSAP & Motion Canvas</strong>, fueled by a sharp sense of visual craft.
             </p>
           </div>
@@ -194,6 +192,11 @@ export default function Home() {
           {/* Cursor Status Indicator */}
           <div className="pt-4">
             <CursorStatus initials="NS" />
+          </div>
+
+          {/* GitHub Contributions */}
+          <div className="pt-6">
+            <GitHubContributions />
           </div>
         </div>
       </section>
