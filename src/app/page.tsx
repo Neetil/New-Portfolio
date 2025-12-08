@@ -98,7 +98,7 @@ export default function Home() {
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium">
                 PostgreSQL
               </span>
-              . Specializing in <strong className="text-foreground font-semibold">user interface</strong> design and development. Creating <strong className="text-foreground font-semibold">scalable solutions</strong>, and exploring <strong className="text-foreground font-semibold">GSAP & Motion Canvas</strong> with curiosity, fueled by a sharp sense of visual craft.
+              . Specializing in <strong className="text-foreground font-semibold">user interface</strong> design and development. Creating <strong className="text-foreground font-semibold">scalable solutions</strong>, and exploring <strong className="text-foreground font-semibold">GSAP & Motion Canvas</strong>, fueled by a sharp sense of visual craft.
             </p>
           </div>
 
