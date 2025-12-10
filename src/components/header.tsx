@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
-import { ThemeToggleButton } from './theme-toggle-button';
 import { MusicPlayer } from './music-player'; 
 import { useState } from 'react'; 
 import { cn } from '@/lib/utils'; 
@@ -47,9 +46,6 @@ export function Header() {
           {/* Music player is now always visible */}
           <MusicPlayer />
 
-          {/* Theme toggle button is now always visible, even on mobile */}
-          <ThemeToggleButton />
-
           <div className="md:hidden">
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
@@ -71,7 +67,6 @@ export function Header() {
                         {item.label}
                       </Link>
                     ))}
-                    {/* Removed theme toggle button from here since it's now always visible in the header */}
                   </nav>
                 </div>
               </SheetContent>

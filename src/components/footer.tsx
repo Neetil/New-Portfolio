@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer id="contact" className="py-6 border-t">
   
-      <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-8 sm:px-12 md:px-16 lg:px-20 xl:px-48">
+      <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
           Built by Neetil. © {new Date().getFullYear()}. All rights reserved.
         </p>

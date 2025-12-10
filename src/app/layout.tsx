@@ -6,7 +6,6 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import { BackToTop } from "@/components/back-to-top";
-import { ThemeProvider } from '@/providers/theme-provider';
 import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
@@ -50,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth dark" suppressHydrationWarning>
       <head>
       <link rel="icon" href="/images/favicon/n-favicon.png" sizes="any" />
          {/* Google AdSense Script */}
@@ -66,16 +65,14 @@ export default function RootLayout({
           geistSans.variable
         )}
       >
-        <ThemeProvider>
-          <Header />
-          <main className="flex flex-col min-h-[calc(100vh-theme(spacing.16))]">
-            {children}
-          </main>
-          <Footer />
-          <Toaster />
-          <BackToTop />
-          <Analytics />
-        </ThemeProvider>
+        <Header />
+        <main className="flex flex-col min-h-[calc(100vh-theme(spacing.16))]">
+          {children}
+        </main>
+        <Footer />
+        <Toaster />
+        <BackToTop />
+        <Analytics />
       </body>
     </html>
   );

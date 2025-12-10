@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ProjectCard } from '@/components/project-card';
+import { ProjectCardFeatured } from '@/components/project-card-featured';
 import { Testimonials } from '@/components/testimonials'; 
 import { ContactForm } from '@/components/contact-form'; 
 import { Code, Download, Layers, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
@@ -12,36 +12,34 @@ import { GitHubContributions } from '@/components/github-contributions';
 
 const projects = [
   {
+    title: "Astronomy Club",
+    description: "A comprehensive club management platform for the Physics and Astronomy Club, facilitating event organization, member management, and scientific collaboration.",
+    imageUrl: "/images/projects/physics-astronomy-club.jpeg", // Placeholder - you'll provide this later
+    tags: ["Club Management", "Event Planning", "Member Management"],
+    techIcons: [
+      { name: "Next.js", icon: "N", bgColor: "#000000", textColor: "#FFFFFF" },
+      { name: "TypeScript", icon: "TS", bgColor: "#3178C6", textColor: "#FFFFFF" },
+      { name: "React", icon: "⚛", bgColor: "#61DAFB", textColor: "#000000" },
+      { name: "Vercel", icon: "▲", bgColor: "#000000", textColor: "#FFFFFF" },
+    ],
+    repoUrl: "https://github.com/Neetil/Science_Club_MU",
+    liveUrl: "", // Add live URL if available
+  },
+  {
     title: "Campus Vibe",
     description: "An anonymous platform for students to meet and connect with others on campus through real-time text and video chat.",
-    imageUrl: "/images/projects/campus-vibe-screenshot.jpg",
+    imageUrl: "/images/projects/campus-vibe-screenshot.jpeg",
     tags: ["Next.js", "React", "Tailwind CSS", "Real-time Chat"],
+    techIcons: [
+      { name: "Next.js", icon: "N", bgColor: "#000000", textColor: "#FFFFFF" },
+      { name: "TypeScript", icon: "TS", bgColor: "#3178C6", textColor: "#FFFFFF" },
+      { name: "React", icon: "⚛", bgColor: "#61DAFB", textColor: "#000000" },
+      { name: "Vercel", icon: "▲", bgColor: "#000000", textColor: "#FFFFFF" },
+      { name: "MongoDB", icon: "🍃", bgColor: "#47A248", textColor: "#FFFFFF" },
+      { name: "Tailwind CSS", icon: "~", bgColor: "#06B6D4", textColor: "#FFFFFF" },
+    ],
     liveUrl: "https://campus-vibe-git-main-neetils-projects.vercel.app/",
     repoUrl: "https://github.com/Neetil/campus-vibe",
-  },
-  {
-    title: "FoodLink",
-    description: "A platform connecting surplus food to those in need, helping bridge hunger and hope one connection at a time.",
-    imageUrl: "/images/projects/foodlink.jpg",
-    tags: ["React", "Tailwind", "Food Donation", "Social Impact"],
-    repoUrl: "https://github.com/Neetil/Foodlink",
-    liveUrl: "https://foodlink-git-main-neetils-projects.vercel.app/",
-  },
-  {
-    title: "Clubify",
-    description: "One platform for all clubs - a comprehensive club management system for university technical clubs and organizations.",
-    imageUrl: "/images/projects/clubify.jpg",
-    tags: ["Web Platform", "Club Management", "Event Planning", "Collaboration"],
-    liveUrl: "https://clubify-git-main-neetils-projects.vercel.app/",
-    repoUrl: "https://github.com/Neetil/Clubify",
-  },
-   {
-    title: "NextStep",
-    description: "Empowering your career path with personalized learning roadmaps, mentorship, and AI-driven skill development.",
-    imageUrl: "/images/projects/nextstep.jpg",
-    tags: ["Career Development", "Education", "AI Learning Paths"],
-    liveUrl: "https://next-step-git-main-neetils-projects.vercel.app/",
-    repoUrl: "https://github.com/Neetil/NextStep",
   },
 ];
 
@@ -195,8 +193,32 @@ export default function Home() {
           </div>
 
           {/* GitHub Contributions */}
-          <div className="pt-6">
+          <div className="pt-6 pb-2">
             <GitHubContributions />
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="container relative pt-4">
+        <div className="space-y-10">
+          {/* Section Header */}
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+              Projects
+            </h2>
+          </div>
+
+          {/* Projects Grid - 2x2 on desktop, 1 column on mobile */}
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
+            {projects.map((project, index) => (
+              <div 
+                key={project.title} 
+                className={`animate-fade-in-up delay-${index * 100} group`}
+              >
+                <ProjectCardFeatured project={project} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -259,36 +281,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="container relative">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent -z-10"></div>
-        
-        <div className="space-y-12">
-          {/* Section Header */}
-          <div className="text-center space-y-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              Featured <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Projects</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A collection of projects showcasing my skills and passion for building impactful solutions
-            </p>
-          </div>
-
-          {/* Projects Grid */}
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, index) => (
-              <div 
-                key={project.title} 
-                className={`animate-fade-in-up delay-${index * 100} group`}
-              >
-                <ProjectCard project={project} />
-              </div>
-            ))}
           </div>
         </div>
       </section>
