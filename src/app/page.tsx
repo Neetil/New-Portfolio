@@ -13,7 +13,7 @@ import { GitHubContributions } from '@/components/github-contributions';
 const projects = [
   {
     title: "Astronomy Club",
-    description: "A comprehensive club management platform for the Physics and Astronomy Club, facilitating event organization, member management, and scientific collaboration.",
+    description: "A platform designed to showcase the club highlights, events, team and explorations, featuring a manageable database-driven backend that seamlessly handles content and updates in real time.",
     imageUrl: "/images/projects/physics-astronomy-club.jpeg", // Placeholder - you'll provide this later
     tags: ["Club Management", "Event Planning", "Member Management"],
     techIcons: [
@@ -23,11 +23,11 @@ const projects = [
       { name: "Prisma", iconSrc: "/svg/prisma-svg.svg" },
       { name: "Tailwind CSS", iconSrc: "/svg/tailwind-svg.svg" },
       { name: "Framer Motion", iconSrc: "/svg/framermotion-svg.svg" },
-      { name: "Vercel Blob Storage", iconSrc: "/svg/blobstorage-svg.svg" },
+      { name: "Cloudflare", iconSrc: "/svg/cloudflare-svg.svg" },
       { name: "Vercel", iconSrc: "/svg/vercel-svg.svg" },
     ],
     repoUrl: "https://github.com/Neetil/Science_Club_MU",
-    liveUrl: "", // Add live URL if available
+    liveUrl: "https://science-club-mu-tau.vercel.app/", // Add live URL if available
   },
   {
     title: "Campus Vibe",
