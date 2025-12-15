@@ -1,12 +1,16 @@
+ "use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { Globe, Github, ArrowRight } from 'lucide-react';
 
 interface TechIcon {
   name: string;
-  icon: string;
-  bgColor: string;
-  textColor: string;
+  icon?: string;
+  iconSrc?: string;
+  bgColor?: string;
+  textColor?: string;
 }
 
 interface Project {
@@ -24,22 +28,50 @@ interface ProjectCardFeaturedProps {
 }
 
 // Technology icon component
-const TechIconComponent = ({ tech }: { tech: TechIcon }) => {
+const TechIconComponent = ({
+  tech,
+  onHover,
+  onLeave,
+}: {
+  tech: TechIcon;
+  onHover?: (name: string) => void;
+  onLeave?: () => void;
+}) => {
+  const isNextJs = tech.name.toLowerCase() === 'next.js' || tech.name.toLowerCase() === 'nextjs';
+  const styleOverrides = {
+    ...(tech.bgColor ? { backgroundColor: tech.bgColor } : {}),
+    ...(tech.textColor ? { color: tech.textColor } : {}),
+  };
+
+  const sizeClass = isNextJs ? 'w-11 h-11' : 'w-9 h-9';
+  const iconSize = isNextJs ? 26 : 20;
+
   return (
     <div 
-      className="w-8 h-8 rounded-[2px] flex items-center justify-center text-xs font-semibold"
-      style={{ 
-        backgroundColor: tech.bgColor,
-        color: tech.textColor 
-      }}
+      className={`${sizeClass} flex items-center justify-center text-xs font-semibold transition-transform duration-200 hover:scale-110`}
+      style={styleOverrides}
       title={tech.name}
+      onMouseEnter={() => onHover?.(tech.name)}
+      onMouseLeave={() => onLeave?.()}
     >
-      {tech.icon}
+      {tech.iconSrc ? (
+        <Image 
+          src={tech.iconSrc} 
+          alt={tech.name} 
+          width={iconSize} 
+          height={iconSize} 
+          className="object-contain"
+        />
+      ) : (
+        tech.icon
+      )}
     </div>
   );
 };
 
 export function ProjectCardFeatured({ project }: ProjectCardFeaturedProps) {
+  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
+
   return (
     <div className="group relative overflow-hidden rounded-lg transition-all duration-300 h-full flex flex-col border" style={{ borderColor: '#0A0A0A' }}>
       {/* Gradient Border - Always visible */}
@@ -105,9 +137,14 @@ export function ProjectCardFeatured({ project }: ProjectCardFeaturedProps) {
           {project.techIcons && project.techIcons.length > 0 && (
             <div className="space-y-2 mb-4">
               <p className="text-xs text-muted-foreground font-medium">Technologies</p>
-              <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap items-center gap-0.4">
                 {project.techIcons.map((tech, index) => (
-                  <TechIconComponent key={index} tech={tech} />
+                  <TechIconComponent
+                    key={index}
+                    tech={tech}
+                    onHover={(name) => setHoveredTech(name)}
+                    onLeave={() => setHoveredTech(null)}
+                  />
                 ))}
               </div>
             </div>
@@ -127,6 +164,12 @@ export function ProjectCardFeatured({ project }: ProjectCardFeaturedProps) {
           </div>
         </div>
       </div>
+
+      {hoveredTech && (
+        <div className="fixed bottom-4 right-4 px-3 py-2 rounded-md bg-black/80 text-xs text-white shadow-lg pointer-events-none z-50">
+          {hoveredTech}
+        </div>
+      )}
     </div>
   );
 }

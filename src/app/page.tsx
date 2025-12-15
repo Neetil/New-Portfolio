@@ -17,10 +17,14 @@ const projects = [
     imageUrl: "/images/projects/physics-astronomy-club.jpeg", // Placeholder - you'll provide this later
     tags: ["Club Management", "Event Planning", "Member Management"],
     techIcons: [
-      { name: "Next.js", icon: "N", bgColor: "#000000", textColor: "#FFFFFF" },
-      { name: "TypeScript", icon: "TS", bgColor: "#3178C6", textColor: "#FFFFFF" },
-      { name: "React", icon: "⚛", bgColor: "#61DAFB", textColor: "#000000" },
-      { name: "Vercel", icon: "▲", bgColor: "#000000", textColor: "#FFFFFF" },
+      { name: "Next.js", iconSrc: "/svg/nextjs-svg.svg" },
+      { name: "TypeScript", iconSrc: "/svg/typescript-svg.svg" },
+      { name: "PostgreSQL", iconSrc: "/svg/postgresql-svg.svg" },
+      { name: "Prisma", iconSrc: "/svg/prisma-svg.svg" },
+      { name: "Tailwind CSS", iconSrc: "/svg/tailwind-svg.svg" },
+      { name: "Framer Motion", iconSrc: "/svg/framermotion-svg.svg" },
+      { name: "Vercel Blob Storage", iconSrc: "/svg/blobstorage-svg.svg" },
+      { name: "Vercel", iconSrc: "/svg/vercel-svg.svg" },
     ],
     repoUrl: "https://github.com/Neetil/Science_Club_MU",
     liveUrl: "", // Add live URL if available
