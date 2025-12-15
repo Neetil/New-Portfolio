@@ -37,14 +37,16 @@ const TechIconComponent = ({
   onHover?: (name: string) => void;
   onLeave?: () => void;
 }) => {
-  const isNextJs = tech.name.toLowerCase() === 'next.js' || tech.name.toLowerCase() === 'nextjs';
+  const lowerName = tech.name.toLowerCase();
+  const isNextJs = lowerName === 'next.js' || lowerName === 'nextjs';
+  const isNodeJs = lowerName === 'node.js' || lowerName === 'nodejs' || lowerName === 'node.js runtime';
   const styleOverrides = {
     ...(tech.bgColor ? { backgroundColor: tech.bgColor } : {}),
     ...(tech.textColor ? { color: tech.textColor } : {}),
   };
 
   const sizeClass = isNextJs ? 'w-11 h-11' : 'w-9 h-9';
-  const iconSize = isNextJs ? 26 : 20;
+  const iconSize = isNextJs ? 26 : isNodeJs ? 30 : 20;
 
   return (
     <div 

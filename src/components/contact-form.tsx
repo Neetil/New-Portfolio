@@ -18,7 +18,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { CheckCircle2, Loader2, Send } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import emailjs from '@emailjs/browser';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -28,13 +27,7 @@ const contactFormSchema = z.object({
   message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
-type ContactFormValues = z.infer<typeof contactFormSchema>;
-
-// EmailJS configuration
-
-const EMAILJS_SERVICE_ID = 'service_9pkwqp6'; 
-const EMAILJS_TEMPLATE_ID = 'template_9zb2kxs'; 
-const EMAILJS_PUBLIC_KEY = 'NE3_mzxs8G5QJGRhj'; 
+type ContactFormValues = z.infer<typeof contactFormSchema>; 
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -57,23 +50,20 @@ export function ContactForm() {
     setIsSuccess(false);
 
     try {
-      // Initialize EmailJS with your public key
-      emailjs.init(EMAILJS_PUBLIC_KEY);
+      // Send email using Resend API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-      // Prepare the template parameters
-      const templateParams = {
-        name: data.name,
-        email: data.email,
-        subject: data.subject,
-        message: data.message,
-      };
+      const result = await response.json();
 
-      // Send the email using EmailJS
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams
-      );
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message');
+      }
 
       // If successful, show a success toast
       toast({
@@ -89,7 +79,7 @@ export function ContactForm() {
     } catch (error) {
       console.error('Error sending message:', error);
 
-      //  error toast
+      // Show error toast
       toast({
         variant: 'destructive',
         title: 'Something went wrong',

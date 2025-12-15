@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ProjectCardFeatured } from '@/components/project-card-featured';
 import { Testimonials } from '@/components/testimonials'; 
 import { ContactForm } from '@/components/contact-form'; 
-import { Code, Download, Layers, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Code, Download, Layers, Mail, Github, Linkedin, Twitter, Instagram, Zap, Rocket, Coffee, Sparkles } from 'lucide-react';
 import { CursorStatus } from '@/components/cursor-status';
 import { GitHubContributions } from '@/components/github-contributions';
 
@@ -35,12 +35,13 @@ const projects = [
     imageUrl: "/images/projects/campus-vibe-screenshot.jpeg",
     tags: ["Next.js", "React", "Tailwind CSS", "Real-time Chat"],
     techIcons: [
-      { name: "Next.js", icon: "N", bgColor: "#000000", textColor: "#FFFFFF" },
-      { name: "TypeScript", icon: "TS", bgColor: "#3178C6", textColor: "#FFFFFF" },
-      { name: "React", icon: "⚛", bgColor: "#61DAFB", textColor: "#000000" },
-      { name: "Vercel", icon: "▲", bgColor: "#000000", textColor: "#FFFFFF" },
-      { name: "MongoDB", icon: "🍃", bgColor: "#47A248", textColor: "#FFFFFF" },
-      { name: "Tailwind CSS", icon: "~", bgColor: "#06B6D4", textColor: "#FFFFFF" },
+      { name: "Next.js", iconSrc: "/svg/nextjs-svg.svg" },
+      { name: "React", iconSrc: "/svg/react-svg.svg" },
+      { name: "TypeScript", iconSrc: "/svg/typescript-svg.svg" },
+      { name: "Node.js", iconSrc: "/svg/nodejs-svg.svg" },
+      { name: "Tailwind CSS", iconSrc: "/svg/tailwind-svg.svg" },
+      { name: "Socket.IO", iconSrc: "/svg/socketio-svg.svg" },
+      { name: "WebRTC", iconSrc: "/svg/webrtc-svg.svg" },
     ],
     liveUrl: "https://campus-vibe-git-main-neetils-projects.vercel.app/",
     repoUrl: "https://github.com/Neetil/campus-vibe",
@@ -49,16 +50,16 @@ const projects = [
 
 
 const skills = [
-  { name: "JavaScript", icon: Code },
-  { name: "Java", icon: Code }, 
-  { name: "React", icon: Code },
   { name: "Next.js", icon: Code },
+  { name: "React", icon: Code },
+  { name: "TypeScript", icon: Code },
   { name: "Node.js", icon: Code },
-  { name: "HTML & CSS", icon: Code },
   { name: "Tailwind CSS", icon: Code },
-  { name: "SQL", icon: Code },
-
-  { name: "Figma", icon: Layers },
+  { name: "PostgreSQL", icon: Code },
+  { name: "Prisma ORM", icon: Code },
+  { name: "Socket.IO", icon: Code },
+  { name: "WebRTC", icon: Code },
+  { name: "Vercel & Cloudflare", icon: Layers },
 ];
 
 export default function Home() {
@@ -228,60 +229,86 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="container relative">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent -z-10"></div>
-        
-        <div className="space-y-12">
-          {/* Section Header */}
-          <div className="text-center space-y-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+      <section id="about" className="container relative pt-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
               About <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Me</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Passionate developer crafting digital experiences that matter
-            </p>
           </div>
 
-          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
-            {/* About Text */}
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-2 hover:border-accent/50 transition-all duration-300 hover:shadow-xl">
-              <CardContent className="space-y-6 p-0">
-                <div className="space-y-4">
-                  <p className="text-muted-foreground text-lg leading-relaxed">
-                    I'm <span className="text-foreground font-semibold">Neetil</span>, a passionate developer with a strong focus on building clean, efficient, and user-centric digital experiences. My journey into tech began during the first semester of my college when I started experimenting with simple HTML pages, which soon turned into a deep passion for web development.
-                  </p>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
-                    Since then, I've worked on mastering both frontend and backend technologies, developing robust, scalable applications. Beyond coding, I find energy in challenges — whether it's collaborating with dynamic teams, participating in intense hackathons, or pushing boundaries through new projects.
-                  </p>
-                </div>
-                <Button variant="outline" size="lg" asChild className="group">
-                  <Link href="#contact">
-                    <Mail className="mr-2 h-4 w-4 group-hover:animate-pulse" /> 
-                    Get In Touch
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Skills Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Main Content */}
             <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold mb-6">Technologies & Tools</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {skills.map((skill, index) => (
-                    <Card 
-                      key={skill.name} 
-                      className="group relative overflow-hidden border-2 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                    >
-                      <CardContent className="flex flex-col items-center justify-center p-6 gap-3">
-                        <div className="p-3 rounded-lg bg-gradient-to-br from-accent/20 to-secondary/20 group-hover:from-accent/30 group-hover:to-secondary/30 transition-all">
-                          <skill.icon className="h-6 w-6 text-accent" />
-                        </div>
-                        <span className="text-sm font-semibold text-center">{skill.name}</span>
-                      </CardContent>
-                    </Card>
-                  ))}
+              <div className="space-y-5">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  I'm <span className="text-foreground font-semibold">Neetil</span>, a full-stack developer who turns ideas into real products. 
+                  I build fast, responsive interfaces with <span className="text-foreground font-medium">React</span> and <span className="text-foreground font-medium">Next.js</span>, 
+                  and connect them to reliable backends using <span className="text-foreground font-medium">Node.js</span>, <span className="text-foreground font-medium">PostgreSQL</span>, and <span className="text-foreground font-medium">Prisma</span>.
+                </p>
+
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  When I need real-time features — live chat, collaboration tools, or dynamic dashboards — I use <span className="text-foreground font-medium">Socket.IO</span> and <span className="text-foreground font-medium">WebRTC</span>. 
+                  I focus on clean design with <span className="text-foreground font-medium">Tailwind CSS</span>, smooth animations, and making sure everything feels polished.
+                </p>
+
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  I deploy on <span className="text-foreground font-medium">Vercel</span> and experiment with <span className="text-foreground font-medium">Cloudflare</span> to keep apps fast. 
+                  Always learning, always building something new.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column - Visual Elements */}
+            <div className="space-y-8">
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-6 rounded-xl border border-border/50 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm hover:border-accent/50 transition-all group">
+                  <div className="text-3xl font-bold text-foreground mb-1 group-hover:scale-105 transition-transform">4+</div>
+                  <div className="text-sm text-muted-foreground">Projects</div>
+                </div>
+                <div className="p-6 rounded-xl border border-border/50 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm hover:border-accent/50 transition-all group">
+                  <div className="text-3xl font-bold text-foreground mb-1 group-hover:scale-105 transition-transform">2</div>
+                  <div className="text-sm text-muted-foreground">Live Apps</div>
+                </div>
+              </div>
+
+              {/* Tech Stack */}
+              <div className="space-y-4">
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Tech Stack</h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">TypeScript</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Next.js</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">PostgreSQL</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Prisma</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Socket.IO</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">WebRTC</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Tailwind</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Vercel</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Cloudflare</span>
+                </div>
+              </div>
+
+              {/* Focus Areas */}
+              <div className="space-y-4">
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Focus Areas</h3>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
+                    <span>Full-stack web development</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+                    <span>Real-time applications</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
+                    <span>UI/UX design & animations</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+                    <span>Performance optimization</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -290,18 +317,15 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="container relative">
+      <section id="testimonials" className="container relative pt-4">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent -z-10"></div>
         
         <div className="space-y-12">
-          <div className="text-center space-y-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
               What People <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Say</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Testimonials from colleagues, clients, and collaborators
-            </p>
           </div>
           <div className="max-w-5xl mx-auto">
             <Testimonials />
@@ -310,62 +334,72 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="container relative">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent -z-10"></div>
-        
-        <div className="space-y-12">
+      <section id="contact" className="container relative pt-4">
+        <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <div className="text-center space-y-3">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
               Let's <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Connect</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind? Let's discuss how we can bring your ideas to life
-            </p>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-2 items-start">
-            {/* Contact Info */}
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Contact Info */}
+            <div className="space-y-6">
               <div className="space-y-4">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
                 </p>
               </div>
               
-              <div className="space-y-4">
-                <Card className="group hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
-                  <CardContent className="p-6 flex items-center gap-4">
-                    <div className="p-3 rounded-lg bg-gradient-to-br from-accent/20 to-secondary/20 group-hover:from-accent/30 group-hover:to-secondary/30 transition-all">
-                      <Mail className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1">Email</h3>
-                      <a 
-                        href="mailto:neetilwork@gmail.com" 
-                        className="text-muted-foreground hover:text-foreground transition-colors hover:underline"
-                      >
-                        neetilwork@gmail.com
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
+              <div className="p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-accent/50 transition-all group">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-gradient-to-br from-accent/20 to-secondary/20 group-hover:from-accent/30 group-hover:to-secondary/30 transition-all flex-shrink-0">
+                    <Mail className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-base mb-1">Email</h3>
+                    <a 
+                      href="mailto:neetilwork@gmail.com" 
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:underline"
+                    >
+                      neetilwork@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-3 pt-4">
+                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Quick Response</h3>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
+                    <span>Usually responds within 24 hours</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+                    <span>Open to freelance opportunities</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
+                    <span>Available for collaboration</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <Card className="border-2 hover:border-accent/50 transition-all duration-300 hover:shadow-xl">
-              <CardHeader className="space-y-2">
-                <CardTitle className="text-2xl">Send me a message</CardTitle>
-                <CardDescription className="text-base">
-                  Fill out the form below and I'll get back to you as soon as possible.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+            {/* Right Column - Contact Form */}
+            <div className="p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-accent/50 transition-all">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Send me a message</h3>
+                  <p className="text-base md:text-lg text-muted-foreground">
+                    Fill out the form below and I'll get back to you as soon as possible.
+                  </p>
+                </div>
                 <ContactForm />
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
