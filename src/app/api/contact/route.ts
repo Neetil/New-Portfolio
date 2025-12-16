@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -15,6 +13,19 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Check if API key is configured
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not configured');
+      return NextResponse.json(
+        { error: 'Email service is not configured. Please contact directly at neetilwork@gmail.com' },
+        { status: 500 }
+      );
+    }
+
+    // Initialize Resend with API key
+    const resend = new Resend(apiKey);
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
