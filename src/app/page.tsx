@@ -393,7 +393,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-bold mb-2">Send me a message</h3>
-                  <p className="text-base md:text-lg text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">
                     Fill out the form below and I'll get back to you as soon as possible.
                   </p>
                 </div>
