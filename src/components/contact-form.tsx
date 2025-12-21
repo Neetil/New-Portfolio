@@ -16,8 +16,9 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { CheckCircle2, Loader2, Send } from 'lucide-react';
+import { CheckCircle2, Loader2, Send, AlertCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -32,6 +33,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -48,6 +50,7 @@ export function ContactForm() {
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
     setIsSuccess(false);
+    setError(null);
 
     try {
       // Send email using Resend API
@@ -62,7 +65,9 @@ export function ContactForm() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || 'Failed to send message');
+        const errorMessage = result.error || 'Failed to send message';
+        setError(errorMessage);
+        throw new Error(errorMessage);
       }
 
       // If successful, show a success toast
@@ -79,13 +84,18 @@ export function ContactForm() {
     } catch (error) {
       console.error('Error sending message:', error);
 
+      // Set error message for display
+      const errorMessage = error instanceof Error
+        ? error.message
+        : 'Your message could not be sent. Please try again later or contact directly at neetilwork@gmail.com';
+      
+      setError(errorMessage);
+
       // Show error toast
       toast({
         variant: 'destructive',
         title: 'Something went wrong',
-        description: error instanceof Error
-          ? error.message
-          : 'Your message could not be sent. Please try again later.',
+        description: errorMessage,
       });
     } finally {
       setIsSubmitting(false);
@@ -111,6 +121,13 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        {error && (
+          <Alert variant="destructive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
         <div className="grid gap-6 sm:grid-cols-2">
           <FormField
             control={form.control}

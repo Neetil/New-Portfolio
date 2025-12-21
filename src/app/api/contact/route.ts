@@ -30,8 +30,8 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>', // Update this with your verified domain
-      to: ['neetilwork@gmail.com'], // Your email
-      replyTo: email,
+      to: ['sahuji9662@gmail.com'], // Your verified Resend email
+      replyTo: email, // This allows you to reply directly to the sender
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
     if (error) {
       console.error('Resend error:', error);
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: error.message || 'Failed to send email. Please try again later or contact directly at neetilwork@gmail.com' },
         { status: 500 }
       );
     }
@@ -77,8 +77,11 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error('Error processing contact form:', error);
+    const errorMessage = error instanceof Error 
+      ? error.message 
+      : 'Internal server error. Please try again later or contact directly at neetilwork@gmail.com';
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: errorMessage },
       { status: 500 }
     );
   }

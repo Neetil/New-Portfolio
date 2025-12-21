@@ -308,7 +308,7 @@ export default function Home() {
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
                     <span>Performance optimization</span>
-                  </div>
+                        </div>
                 </div>
               </div>
             </div>
@@ -335,71 +335,21 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="container relative pt-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
+        <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
               Let's <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Connect</span>
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column - Contact Info */}
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
-                </p>
-              </div>
-              
-              <div className="p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-accent/50 transition-all group">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-gradient-to-br from-accent/20 to-secondary/20 group-hover:from-accent/30 group-hover:to-secondary/30 transition-all flex-shrink-0">
-                    <Mail className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-base mb-1">Email</h3>
-                    <a 
-                      href="mailto:neetilwork@gmail.com" 
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:underline"
-                    >
-                      neetilwork@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-4">
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Quick Response</h3>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                    <span>Usually responds within 24 hours</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-                    <span>Open to freelance opportunities</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                    <span>Available for collaboration</span>
-                  </div>
-                </div>
-              </div>
+          <div className="p-6 rounded-xl border border-border/50 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm hover:border-accent/50 transition-all">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold mb-2">Send a message</h3>
+              <p className="text-sm text-muted-foreground">
+                Have a project in mind or just want to chat? Drop me a message and I'll get back to you.
+              </p>
             </div>
-
-            {/* Right Column - Contact Form */}
-            <div className="p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-accent/50 transition-all">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Send me a message</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Fill out the form below and I'll get back to you as soon as possible.
-                  </p>
-                </div>
                 <ContactForm />
-              </div>
-            </div>
           </div>
         </div>
       </section>
