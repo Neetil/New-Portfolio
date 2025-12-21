@@ -14,7 +14,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio Pilot | Neetil',
+  title: 'Neetil - Developer',
   description: 'A personal portfolio showcasing projects and skills by Neetil, a Full-Stack Developer.',
   icons: {
     icon: [
