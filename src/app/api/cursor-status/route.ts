@@ -19,9 +19,12 @@ async function checkOnlineStatus(): Promise<boolean> {
   }
 
   try {
-    // Use the current status endpoint which gives us the most recent heartbeat
+    // Get today's date for the heartbeats endpoint
+    const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+
+    // Use the heartbeats endpoint with today's date to get recent activity
     const response = await fetch(
-      `${WAKATIME_API_BASE}/users/current/heartbeats`,
+      `${WAKATIME_API_BASE}/users/current/heartbeats?date=${today}`,
       {
         headers: {
           'Authorization': `Basic ${Buffer.from(WAKATIME_API_KEY).toString('base64')}`,

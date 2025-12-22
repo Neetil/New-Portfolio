@@ -1,4 +1,4 @@
-# Neetil Portfolio
+~# Neetil Portfolio
 
 A modern, responsive personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. This portfolio showcases projects, skills, testimonials, and provides a contact form - all with a sleek design and excellent user experience.
 
