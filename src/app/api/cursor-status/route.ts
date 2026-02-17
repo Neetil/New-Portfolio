@@ -11,7 +11,7 @@ function secondsToHoursMinutes(seconds: number) {
 }
 
 // Helper function to check if user is currently coding (online)
-// Checks if there's been activity in the last 5 minutes
+// Uses multiple approaches since WakaTime heartbeats may be delayed
 async function checkOnlineStatus(): Promise<boolean> {
   if (!WAKATIME_API_KEY) {
     console.log('WAKATIME_API_KEY not found');
@@ -19,47 +19,62 @@ async function checkOnlineStatus(): Promise<boolean> {
   }
 
   try {
-    // Get today's date for the heartbeats endpoint
-    const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+    // First, try the user status endpoint (most reliable)
+    const userResponse = await fetch(
+      `${WAKATIME_API_BASE}/users/current`,
+      {
+        headers: {
+          'Authorization': `Basic ${Buffer.from(WAKATIME_API_KEY).toString('base64')}`,
+        },
+        next: { revalidate: 0 }
+      }
+    );
 
-    // Use the heartbeats endpoint with today's date to get recent activity
-    const response = await fetch(
+    if (userResponse.ok) {
+      const userData = await userResponse.json();
+      if (userData.data && userData.data.last_heartbeat_at) {
+        const lastActivity = new Date(userData.data.last_heartbeat_at);
+        const now = new Date();
+        const minutesSinceActivity = (now.getTime() - lastActivity.getTime()) / (1000 * 60);
+        // Consider online if activity within last 2 hours (generous window for delayed sync)
+        const isOnline = minutesSinceActivity <= 120;
+        console.log(`User status - Last heartbeat: ${minutesSinceActivity.toFixed(1)} minutes ago, Online: ${isOnline}`);
+        return isOnline;
+      }
+    }
+
+    // Fallback 1: Try heartbeats endpoint
+    const today = new Date().toISOString().split('T')[0];
+    const heartbeatResponse = await fetch(
       `${WAKATIME_API_BASE}/users/current/heartbeats?date=${today}`,
       {
         headers: {
           'Authorization': `Basic ${Buffer.from(WAKATIME_API_KEY).toString('base64')}`,
         },
-        next: { revalidate: 0 } // Don't cache - we need fresh data
+        next: { revalidate: 0 }
       }
     );
 
-    if (!response.ok) {
-      console.error('WakaTime API error:', response.status, response.statusText);
-      // Fallback: try status bar endpoint
-      return await checkOnlineStatusFallback();
-    }
-
-    const data = await response.json();
-    
-    // Check the most recent heartbeat
-    if (data.data && data.data.length > 0) {
-      const latestHeartbeat = data.data[0];
-      if (latestHeartbeat.time) {
-        const lastActivity = new Date(latestHeartbeat.time * 1000); // WakaTime uses Unix timestamp
-        const now = new Date();
-        const minutesSinceActivity = (now.getTime() - lastActivity.getTime()) / (1000 * 60);
-        // Consider online if activity within last 5 minutes
-        const isOnline = minutesSinceActivity <= 5;
-        console.log(`Last activity: ${minutesSinceActivity.toFixed(1)} minutes ago, Online: ${isOnline}`);
-        return isOnline;
+    if (heartbeatResponse.ok) {
+      const heartbeatData = await heartbeatResponse.json();
+      if (heartbeatData.data && heartbeatData.data.length > 0) {
+        const latestHeartbeat = heartbeatData.data[0];
+        if (latestHeartbeat.time) {
+          const lastActivity = new Date(latestHeartbeat.time * 1000);
+          const now = new Date();
+          const minutesSinceActivity = (now.getTime() - lastActivity.getTime()) / (1000 * 60);
+          // Consider online if activity within last 2 hours
+          const isOnline = minutesSinceActivity <= 120;
+          console.log(`Heartbeats - Last activity: ${minutesSinceActivity.toFixed(1)} minutes ago, Online: ${isOnline}`);
+          return isOnline;
+        }
       }
     }
-    
-    // Fallback if no heartbeats found
+
+    // Fallback 2: Status bar endpoint
     return await checkOnlineStatusFallback();
   } catch (error) {
     console.error('Error checking online status:', error);
-    // Fallback to status bar endpoint
     return await checkOnlineStatusFallback();
   }
 }
@@ -96,7 +111,7 @@ async function checkOnlineStatusFallback(): Promise<boolean> {
           const lastActivity = new Date(data.data.modified_at);
           const now = new Date();
           const minutesSinceActivity = (now.getTime() - lastActivity.getTime()) / (1000 * 60);
-          const isOnline = minutesSinceActivity <= 5;
+          const isOnline = minutesSinceActivity <= 120; // 2 hours for status bar fallback
           console.log(`Status bar - Last activity: ${minutesSinceActivity.toFixed(1)} minutes ago, Online: ${isOnline}`);
           return isOnline;
         }

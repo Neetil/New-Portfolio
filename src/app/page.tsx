@@ -27,7 +27,7 @@ const projects = [
       { name: "Vercel", iconSrc: "/svg/vercel-svg.svg" },
     ],
     repoUrl: "https://github.com/Neetil/Science_Club_MU",
-    liveUrl: "https://science-club-mu-tau.vercel.app/", // Add live URL if available
+    liveUrl: "https://scienceclub.neetil.in", // Add live URL if available
   },
   {
     title: "Campus Vibe",
@@ -79,7 +79,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl sm:text-xl md:text-2xl font-semibold text-muted-foreground">
-              Full Stack Developer
+              Full Stack Developer 
             </p>
           </div>
 
