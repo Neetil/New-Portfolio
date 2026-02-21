@@ -64,47 +64,85 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="min-h-screen animate-page-enter">
-      {/* Hero — full-width banner with overlay and title */}
-      <header className="relative w-full aspect-[21/9] min-h-[200px] sm:min-h-[280px] md:min-h-[340px] overflow-hidden">
-        <Image
-          src={bannerSrc}
-          alt={project.title}
-          fill
-          className="object-cover"
-          sizes="100vw"
-          priority
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"
-          aria-hidden
-        />
-        <div className="absolute bottom-0 left-0 right-0 container pb-6 md:pb-10">
-          <Link
-            href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Projects
-          </Link>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground drop-shadow-sm">
-            {project.title}
-          </h1>
-        </div>
-      </header>
+      {/* Hero — full-width banner with overlay and title (within container margins) */}
+      <div className="container pt-6 pb-0">
+        <header className="relative w-full aspect-[21/9] min-h-[180px] sm:min-h-[240px] md:min-h-[280px] overflow-hidden rounded-lg">
+          <Image
+            src={bannerSrc}
+            alt={project.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+            priority
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent rounded-lg"
+            aria-hidden
+          />
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+            <Link
+              href="/#projects"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Projects
+            </Link>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground drop-shadow-sm">
+              {project.title}
+            </h1>
+          </div>
+        </header>
+      </div>
 
-      <div className="container py-10 md:py-16 space-y-16">
+      <div className="container py-6 md:py-8 space-y-8 project-detail-content">
         {/* Project Overview */}
         <RevealSection>
-          <div className="space-y-8">
+          <div className="space-y-5">
             <h2 className="text-2xl font-bold tracking-tight">Project Overview</h2>
             <p className="text-muted-foreground leading-relaxed max-w-3xl">
               {project.overview}
             </p>
 
-            <div className="grid gap-8 sm:grid-cols-2">
+            <div className="flex flex-wrap gap-4">
+              {project.liveUrl && (
+                <Button asChild size="lg" className="gap-2 transition-transform hover:scale-105">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center"
+                  >
+                    <Globe className="h-5 w-5" aria-hidden />
+                    Live Demo
+                    <ExternalLink className="h-4 w-4" aria-hidden />
+                  </a>
+                </Button>
+              )}
+              {project.repoUrl && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="gap-2 border-2 transition-transform hover:scale-105"
+                >
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center"
+                  >
+                    <Github className="h-5 w-5" aria-hidden />
+                    Source Code
+                    <ExternalLink className="h-4 w-4" aria-hidden />
+                  </a>
+                </Button>
+              )}
+            </div>
+
+            <div className="space-y-5">
               <div>
-                <h3 className="text-lg font-semibold mb-3">Key Features</h3>
-                <ul className="space-y-2 text-muted-foreground">
+                <h3 className="text-lg font-semibold mb-2">Key Features</h3>
+                <ul className="space-y-1.5 text-muted-foreground">
                   {project.keyFeatures.map((feature, i) => (
                     <li key={i} className="flex gap-2">
                       <span className="text-accent mt-1.5 shrink-0">•</span>
@@ -114,8 +152,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-3">Future Plans</h3>
-                <ul className="space-y-2 text-muted-foreground">
+                <h3 className="text-lg font-semibold mb-2">Future Plans</h3>
+                <ul className="space-y-1.5 text-muted-foreground">
                   {project.futurePlans.map((plan, i) => (
                     <li key={i} className="flex gap-2">
                       <span className="text-secondary mt-1.5 shrink-0">→</span>
@@ -128,49 +166,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </RevealSection>
 
-        {/* CTA Buttons */}
-        <RevealSection>
-          <div className="flex flex-wrap gap-4">
-            {project.liveUrl && (
-              <Button asChild size="lg" className="gap-2 transition-transform hover:scale-105">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center"
-                >
-                  <Globe className="h-5 w-5" aria-hidden />
-                  Live Demo
-                  <ExternalLink className="h-4 w-4" aria-hidden />
-                </a>
-              </Button>
-            )}
-            {project.repoUrl && (
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="gap-2 border-2 transition-transform hover:scale-105"
-              >
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center"
-                >
-                  <Github className="h-5 w-5" aria-hidden />
-                  Source Code
-                  <ExternalLink className="h-4 w-4" aria-hidden />
-                </a>
-              </Button>
-            )}
-          </div>
-        </RevealSection>
-
         {/* Tech Stack */}
         <RevealSection>
-          <h2 className="text-2xl font-bold tracking-tight mb-6">Tech Stack</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <h2 className="text-2xl font-bold tracking-tight mb-4">Tech Stack</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {project.techStack.frontend?.length ? (
               <div className="space-y-2">
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
@@ -244,14 +243,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         {/* Key Highlights / Achievements */}
         <RevealSection>
-          <h2 className="text-2xl font-bold tracking-tight mb-6">
+          <h2 className="text-2xl font-bold tracking-tight mb-4">
             Key Highlights & Achievements
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {project.highlights.map((h, i) => (
               <div
                 key={i}
-                className="p-5 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-accent/50 transition-colors"
+                className="p-4 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-accent/50 transition-colors"
               >
                 <h3 className="font-semibold text-foreground">{h.title}</h3>
                 {h.description && (

@@ -62,16 +62,18 @@ export const projects: ProjectDetail[] = [
     repoUrl: "https://github.com/Neetil/Science_Club_MU",
     liveUrl: "https://scienceclub.neetil.in",
     overview:
-      "A production-ready club management platform built with 30+ React components and 23 RESTful API endpoints. It serves all club operations including event registration, content management, and member engagement. The backend is architected with Prisma ORM using 9 database models, with type-safe CRUD operations and optimized queries.",
+      "A club management platform . It serves all club operations including event registration, content management, and member engagement.",
     keyFeatures: [
       "Comprehensive admin dashboard with 10+ management modules: events, registrations, gallery, team, statistics, and newsletter — enabling full content control without code deployments.",
+
       "Cloudflare R2 for CDN-backed image storage, Instagram API for social feed integration, and an email newsletter system with Excel export for 100+ subscriber management.",
+
       "Advanced performance optimizations: client-side caching and lazy loading for images.",
+
       "Security best practices: bcrypt password hashing, IP-based rate limiting, input validation, and CSRF protection.",
     ],
     futurePlans: [
-      "Expand event types and registration workflows.",
-      "Mobile-friendly admin experience and optional PWA.",
+      "Members would be able to download their certificates",
       "Additional third-party integrations and analytics.",
     ],
     techStack: {
