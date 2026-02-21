@@ -156,9 +156,7 @@ export function GitHubContributions() {
     }
   });
 
-  // Get current year
-  const currentYear = new Date().getFullYear();
-  const currentYearContributions = data.currentYearContributions || data.totalContributions;
+  const totalContributions = data.totalContributions ?? 0;
 
   // Format date for display
   const formatDisplayDate = (date: Date): string => {
@@ -180,7 +178,7 @@ export function GitHubContributions() {
       <div>
         <h3 className="text-lg font-semibold">GitHub Contributions</h3>
         <p className="text-sm text-muted-foreground mt-1">
-          {currentYearContributions} contributions in {currentYear}
+          {totalContributions} total contributions
         </p>
       </div>
 
