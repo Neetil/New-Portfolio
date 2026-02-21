@@ -46,6 +46,18 @@ const projects = [
     liveUrl: "https://campus-vibe-git-main-neetils-projects.vercel.app/",
     repoUrl: "https://github.com/Neetil/campus-vibe",
   },
+  {
+    title: "Color Picker",
+    description: "A browser extension that provides an intuitive color picker tool for developers and designers to easily select, copy, and manage colors from any webpage.",
+    imageUrl: "/images/projects/colorpicker.png",
+    tags: ["Browser Extension", "Color Tools", "Developer Tools"],
+    techIcons: [
+      { name: "JavaScript", iconSrc: "/svg/javascript-svg.svg" },
+      { name: "HTML5", iconSrc: "/svg/html-5-svg.svg" },
+      { name: "CSS3", iconSrc: "/svg/css-3-svg.svg" },
+    ],
+    repoUrl: "https://github.com/Neetil/Color-Picker-Extension",
+  },
 ];
 
 
