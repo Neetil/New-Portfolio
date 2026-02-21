@@ -3,62 +3,12 @@ import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectCardFeatured } from '@/components/project-card-featured';
-import { Testimonials } from '@/components/testimonials'; 
-import { ContactForm } from '@/components/contact-form'; 
-import { Code, Download, Layers, Mail, Github, Linkedin, Twitter, Instagram, Zap, Rocket, Coffee, Sparkles } from 'lucide-react';
+import { Testimonials } from '@/components/testimonials';
+import { ContactForm } from '@/components/contact-form';
+import { Code, Download, Layers, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { CursorStatus } from '@/components/cursor-status';
 import { GitHubContributions } from '@/components/github-contributions';
-
-
-const projects = [
-  {
-    title: "Astronomy Club",
-    description: "A platform designed to showcase the club highlights, events, team and explorations, featuring a manageable database-driven backend that seamlessly handles content and updates in real time.",
-    imageUrl: "/images/projects/physics-astronomy-club.jpeg", // Placeholder - you'll provide this later
-    tags: ["Club Management", "Event Planning", "Member Management"],
-    techIcons: [
-      { name: "Next.js", iconSrc: "/svg/nextjs-svg.svg" },
-      { name: "TypeScript", iconSrc: "/svg/typescript-svg.svg" },
-      { name: "PostgreSQL", iconSrc: "/svg/postgresql-svg.svg" },
-      { name: "Prisma", iconSrc: "/svg/prisma-svg.svg" },
-      { name: "Tailwind CSS", iconSrc: "/svg/tailwind-svg.svg" },
-      { name: "Framer Motion", iconSrc: "/svg/framermotion-svg.svg" },
-      { name: "Cloudflare", iconSrc: "/svg/cloudflare-svg.svg" },
-      { name: "Vercel", iconSrc: "/svg/vercel-svg.svg" },
-    ],
-    repoUrl: "https://github.com/Neetil/Science_Club_MU",
-    liveUrl: "https://scienceclub.neetil.in", // Add live URL if available
-  },
-  {
-    title: "Campus Vibe",
-    description: "An anonymous platform for students to meet and connect with others on campus through real-time text and video chat.",
-    imageUrl: "/images/projects/campus-vibe-screenshot.jpeg",
-    tags: ["Next.js", "React", "Tailwind CSS", "Real-time Chat"],
-    techIcons: [
-      { name: "Next.js", iconSrc: "/svg/nextjs-svg.svg" },
-      { name: "React", iconSrc: "/svg/react-svg.svg" },
-      { name: "TypeScript", iconSrc: "/svg/typescript-svg.svg" },
-      { name: "Node.js", iconSrc: "/svg/nodejs-svg.svg" },
-      { name: "Tailwind CSS", iconSrc: "/svg/tailwind-svg.svg" },
-      { name: "Socket.IO", iconSrc: "/svg/socketio-svg.svg" },
-      { name: "WebRTC", iconSrc: "/svg/webrtc-svg.svg" },
-    ],
-    liveUrl: "https://campus-vibe-git-main-neetils-projects.vercel.app/",
-    repoUrl: "https://github.com/Neetil/campus-vibe",
-  },
-  {
-    title: "Color Picker",
-    description: "A browser extension that provides an intuitive color picker tool for developers and designers to easily select, copy, and manage colors from any webpage.",
-    imageUrl: "/images/projects/colorpicker.png",
-    tags: ["Browser Extension", "Color Tools", "Developer Tools"],
-    techIcons: [
-      { name: "JavaScript", iconSrc: "/svg/javascript-svg.svg" },
-      { name: "HTML5", iconSrc: "/svg/html-5-svg.svg" },
-      { name: "CSS3", iconSrc: "/svg/css-3-svg.svg" },
-    ],
-    repoUrl: "https://github.com/Neetil/Color-Picker-Extension",
-  },
-];
+import { projects } from '@/data/projects';
 
 
 const skills = [

@@ -14,6 +14,7 @@ interface TechIcon {
 }
 
 interface Project {
+  slug?: string;
   title: string;
   description: string;
   imageUrl?: string | null;
@@ -152,15 +153,14 @@ export function ProjectCardFeatured({ project }: ProjectCardFeaturedProps) {
             </div>
           )}
 
-          {/* Footer with view details only */}
+          {/* Footer with More Details link to project page */}
           <div className="flex items-center justify-end pt-2">
             <Link 
-              href={project.liveUrl || project.repoUrl || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={project.slug ? `/projects/${project.slug}` : (project.liveUrl || project.repoUrl || '#')}
+              {...(project.slug ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
               className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors group/link"
             >
-              View Details
+              More Details
               <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
             </Link>
           </div>
