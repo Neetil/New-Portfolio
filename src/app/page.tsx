@@ -5,23 +5,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ProjectCardFeatured } from '@/components/project-card-featured';
 import { Testimonials } from '@/components/testimonials';
 import { ContactForm } from '@/components/contact-form';
-import { Code, Download, Layers, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Download, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { CursorStatus } from '@/components/cursor-status';
 import { GitHubContributions } from '@/components/github-contributions';
 import { projects } from '@/data/projects';
 
 
-const skills = [
-  { name: "Next.js", icon: Code },
-  { name: "React", icon: Code },
-  { name: "TypeScript", icon: Code },
-  { name: "Node.js", icon: Code },
-  { name: "Tailwind CSS", icon: Code },
-  { name: "PostgreSQL", icon: Code },
-  { name: "Prisma ORM", icon: Code },
-  { name: "Socket.IO", icon: Code },
-  { name: "WebRTC", icon: Code },
-  { name: "Vercel & Cloudflare", icon: Layers },
+const aboutTechStack = [
+  { name: "Next.js", iconSrc: "/svg/nextjs-svg.svg" },
+  { name: "TypeScript", iconSrc: "/svg/typescript-svg.svg" },
+  { name: "React", iconSrc: "/svg/react-svg.svg" },
+  { name: "Node.js", iconSrc: "/svg/nodejs-svg.svg" },
+  { name: "Tailwind CSS", iconSrc: "/svg/tailwind-svg.svg" },
+  { name: "PostgreSQL", iconSrc: "/svg/postgresql-svg.svg" },
+  { name: "Prisma", iconSrc: "/svg/prisma-svg.svg" },
+  { name: "Socket.IO", iconSrc: "/svg/socketio-svg.svg" },
+  { name: "WebRTC", iconSrc: "/svg/webrtc-svg.svg" },
+  { name: "Framer Motion", iconSrc: "/svg/framermotion-svg.svg" },
+  { name: "Vercel", iconSrc: "/svg/vercel-svg.svg" },
+  { name: "Cloudflare", iconSrc: "/svg/cloudflare-svg.svg" },
 ];
 
 export default function Home() {
@@ -192,88 +194,36 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="container relative pt-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              About <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Me</span>
-            </h2>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-8 ">About Me</h2>
           </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column - Main Content */}
-            <div className="space-y-6">
-              <div className="space-y-5">
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  I'm <span className="text-foreground font-semibold">Neetil</span>, a full-stack developer who turns ideas into real products. 
-                  I build fast, responsive interfaces with <span className="text-foreground font-medium">React</span> and <span className="text-foreground font-medium">Next.js</span>, 
-                  and connect them to reliable backends using <span className="text-foreground font-medium">Node.js</span>, <span className="text-foreground font-medium">PostgreSQL</span>, and <span className="text-foreground font-medium">Prisma</span>.
-                </p>
-
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  When I need real-time features — live chat, collaboration tools, or dynamic dashboards — I use <span className="text-foreground font-medium">Socket.IO</span> and <span className="text-foreground font-medium">WebRTC</span>. 
-                  I focus on clean design with <span className="text-foreground font-medium">Tailwind CSS</span>, smooth animations, and making sure everything feels polished.
-                </p>
-
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  I deploy on <span className="text-foreground font-medium">Vercel</span> and experiment with <span className="text-foreground font-medium">Cloudflare</span> to keep apps fast. 
-                  Always learning, always building something new.
-                </p>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
+            Neetil Sahu
+          </h3>
+          <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mb-6">
+          I’m a full-stack developer working with React, Next.js, Node.js, and TypeScript to build scalable and production-ready applications. I design clean user interfaces, structure efficient backend logic, and ensure smooth performance across the stack. I focus on writing maintainable code and delivering reliable solutions that are built to scale.
+          </p>
+          
+          <p className="text-sm font-medium text-muted-foreground mb-3">Skills</p>
+          <div className="flex flex-wrap items-center gap-3">
+            {aboutTechStack.map((tech) => (
+              <div
+                key={tech.name}
+                className="flex items-center justify-center w-10 h-10 rounded-lg bg-muted/60 border border-border/60 hover:border-muted-foreground/30 transition-colors"
+                title={tech.name}
+              >
+                <Image
+                  src={tech.iconSrc}
+                  alt=""
+                  width={22}
+                  height={22}
+                  className="object-contain"
+                  aria-hidden
+                />
+                <span className="sr-only">{tech.name}</span>
               </div>
-            </div>
-
-            {/* Right Column - Visual Elements */}
-            <div className="space-y-8">
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 rounded-xl border border-border/50 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm hover:border-accent/50 transition-all group">
-                  <div className="text-3xl font-bold text-foreground mb-1 group-hover:scale-105 transition-transform">4+</div>
-                  <div className="text-sm text-muted-foreground">Projects</div>
-                </div>
-                <div className="p-6 rounded-xl border border-border/50 bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm hover:border-accent/50 transition-all group">
-                  <div className="text-3xl font-bold text-foreground mb-1 group-hover:scale-105 transition-transform">2</div>
-                  <div className="text-sm text-muted-foreground">Live Apps</div>
-                </div>
-              </div>
-
-              {/* Tech Stack */}
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Tech Stack</h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">TypeScript</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Next.js</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">PostgreSQL</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Prisma</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Socket.IO</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">WebRTC</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Tailwind</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Vercel</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium hover:border-accent/50 transition-colors">Cloudflare</span>
-                </div>
-              </div>
-
-              {/* Focus Areas */}
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">Focus Areas</h3>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                    <span>Full-stack web development</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-                    <span>Real-time applications</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                    <span>UI/UX design & animations</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-                    <span>Performance optimization</span>
-                        </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
