@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { getProjectBySlug, getAllProjectSlugs } from "@/data/projects";
 import { RevealSection } from "@/components/reveal-section";
 
+
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
