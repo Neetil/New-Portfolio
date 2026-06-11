@@ -131,7 +131,7 @@ export function CursorStatus({ initials = "NS" }: CursorStatusProps) {
         <div 
           className={`absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full border-2 border-background ${
             isOnline 
-              ? 'bg-green-500 shadow-lg shadow-green-500/50 animate-pulse' 
+              ? 'bg-green-500 shadow-lg shadow-green-500/50' 
               : 'bg-gray-500'
           }`}
         />
