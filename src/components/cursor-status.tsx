@@ -75,12 +75,9 @@ export function CursorStatus({ initials = "NS" }: CursorStatusProps) {
     // Try to fetch from API first
     fetchCursorStatus();
     
-    // Fallback to localStorage
+    // Fallback to localStorage only after API attempt
     const localTime = getLocalWorkTime();
-    if (localTime.hours === 0 && localTime.minutes === 0) {
-      // Set default if nothing found
-      setYesterdayWorkTime({ hours: 2, minutes: 34 });
-    } else {
+    if (localTime.hours > 0 || localTime.minutes > 0) {
       setYesterdayWorkTime(localTime);
     }
 
@@ -159,9 +156,11 @@ export function CursorStatus({ initials = "NS" }: CursorStatusProps) {
             </>
           )}
         </div>
-        <div className="text-xs text-muted-foreground mt-1">
-          Yesterday worked {formatTime(yesterdayWorkTime.hours, yesterdayWorkTime.minutes)}
-        </div>
+        {!isLoading && (
+          <div className="text-xs text-muted-foreground mt-1">
+            Yesterday worked {formatTime(yesterdayWorkTime.hours, yesterdayWorkTime.minutes)}
+          </div>
+        )}
       </div>
     </div>
   );

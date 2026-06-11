@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/contact-form';
 import { Download, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { CursorStatus } from '@/components/cursor-status';
 import { GitHubContributions } from '@/components/github-contributions';
+import { ExperienceTimeline } from '@/components/experience-timeline';
 import { projects } from '@/data/projects';
 
 
@@ -164,6 +165,16 @@ export default function Home() {
           {/* GitHub Contributions */}
           <div className="pt-6 pb-2">
             <GitHubContributions />
+          </div>
+
+          {/* Work Experience */}
+          <div id="experience" className="pt-8">
+            <div className="space-y-6">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center">
+                Work Experience
+              </h2>
+              <ExperienceTimeline />
+            </div>
           </div>
         </div>
       </section>
