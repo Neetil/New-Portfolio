@@ -21,9 +21,9 @@ export const workExperiences: WorkExperience[] = [
     location: "Pune, Maharashtra (Onsite)",
     period: "Jun 2026 – Present",
     description: [
-      "Designed and implemented responsive web applications for client projects, ensuring seamless performance across desktop and mobile platforms.",
-"Worked closely with cross-functional teams to translate client requirements into scalable and user-friendly software solutions.",
-"Utilized modern development tools and optimization techniques to improve application performance, reliability, and long-term maintainability.",
+      "Designing and implementing responsive web applications for client projects, ensuring seamless performance across desktop and mobile platforms.",
+"Working with cross-functional teams to translate client requirements into scalable and user-friendly software solutions.",
+"Utilizing modern development tools and optimization techniques to improve application performance, reliability, and long-term maintainability.",
     ],
     skills: [
       { name: "Next.js", iconSrc: "/svg/nextjs-svg.svg" },
