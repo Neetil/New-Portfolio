@@ -53,7 +53,7 @@ export default function Home() {
             <p className="text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed">
               I create dynamic web applications using{' '}
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium">
-                TypeScript
+                JavaScript
               </span>
               {' '}
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted/80 border border-border text-foreground text-sm font-medium">
